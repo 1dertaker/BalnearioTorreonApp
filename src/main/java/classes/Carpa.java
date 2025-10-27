@@ -3,10 +3,10 @@ package classes;
 public abstract class Carpa {
     public int id;
     protected String numero;
-    protected int capacidad; // por ejemplo 4 personas
+    protected int capacidad; 
     protected boolean piletaLibre;
     protected boolean sombrilla;
-    protected boolean habilitada; // true = activa, false = dada de baja
+    protected boolean habilitada; 
 
     public Carpa(int id, String numero, int capacidad, boolean piletaLibre, boolean sombrilla) {
         this.id = id;
@@ -30,3 +30,4 @@ public abstract class Carpa {
 
     public abstract String getTipo();
 }
+
