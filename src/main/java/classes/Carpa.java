@@ -1,33 +1,41 @@
 package classes;
 
-public abstract class Carpa {
-    public int id;
-    protected String numero;
-    protected int capacidad; 
-    protected boolean piletaLibre;
-    protected boolean sombrilla;
-    protected boolean habilitada; 
+public class Carpa {
+    private int id;
+    private int capacidad;
+    private boolean disponible;
+    private boolean vistaMar;
+    private boolean sombrilla;
 
-    public Carpa(int id, String numero, int capacidad, boolean piletaLibre, boolean sombrilla) {
-        this.id = id;
-        this.numero = numero;
+    public Carpa() {}
+
+    public Carpa(int capacidad, boolean vistaMar, boolean sombrilla) {
         this.capacidad = capacidad;
-        this.piletaLibre = piletaLibre;
+        this.vistaMar = vistaMar;
         this.sombrilla = sombrilla;
-        this.habilitada = true;
-    }
-
-    public Carpa(int id, int capacidad, boolean pileta, boolean sombrilla, double precioDia, double precioMes, double precioTemporada, boolean disponible) {
+        this.disponible = true;
     }
 
     public int getId() { return id; }
-    public String getNumero() { return numero; }
-    public int getCapacidad() { return capacidad; }
-    public boolean isPiletaLibre() { return piletaLibre; }
-    public boolean isSombrilla() { return sombrilla; }
-    public boolean isHabilitada() { return habilitada; }
-    public void setHabilitada(boolean habilitada) { this.habilitada = habilitada; }
+    public void setId(int id) { this.id = id; }
 
-    public abstract String getTipo();
+    public int getCapacidad() { return capacidad; }
+    public void setCapacidad(int capacidad) { this.capacidad = capacidad; }
+
+    public boolean isDisponible() { return disponible; }
+    public void setDisponible(boolean disponible) { this.disponible = disponible; }
+
+    public boolean isVistaMar() { return vistaMar; }
+    public void setVistaMar(boolean vistaMar) { this.vistaMar = vistaMar; }
+
+    public boolean isSombrilla() { return sombrilla; }
+    public void setSombrilla(boolean sombrilla) { this.sombrilla = sombrilla; }
+
+    @Override
+    public String toString() {
+        return "Carpa #" + id + " (" + capacidad + " personas, " +
+                (vistaMar ? "frente al mar" : "interior") +
+                (sombrilla ? ", sombrilla" : "") + ")";
+    }
 }
 
