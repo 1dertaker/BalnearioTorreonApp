@@ -1,9 +1,22 @@
 package classes;
 
 public class CarpaPlaya extends Carpa {
-    public CarpaPlaya(int id, String numero, int capacidad, boolean piletaLibre, boolean sombrilla) {
-        super(id, numero, capacidad, piletaLibre, sombrilla);
+    private boolean cochera;
+
+    public CarpaPlaya() {
+        super();
     }
+
+    public CarpaPlaya(int capacidad, boolean vistaMar, boolean sombrilla, boolean cochera) {
+        super(capacidad, vistaMar, sombrilla);
+        this.cochera = cochera;
+    }
+
+    public boolean isCochera() { return cochera; }
+    public void setCochera(boolean cochera) { this.cochera = cochera; }
+
     @Override
-    public String getTipo() { return "Playa"; }
+    public String toString() {
+        return super.toString() + (cochera ? " con cochera" : "");
+    }
 }
