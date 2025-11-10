@@ -1,0 +1,1915 @@
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Grupo 10 - Com 9 - AppWeb</title>
+    <meta name="description" content="NomadIQ plans adaptive journeys that match your pace, mood, and curiosity.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+
+
+    <style>
+        body {font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;-webkit-font-smoothing: antialiased;-moz-osx-font-smoothing: grayscale;font-size: 15px;background-color: #f8fafc;}  .custom-scroll {position: fixed;top: 0;right: 10px;height: 100%;width: 12px;background: rgba(255, 255, 255, 0.1);border-radius: 6px;z-index: 9999;}.custom-scroll-thumb {position: absolute;width: 100%;height: 80px;background: rgba(0, 0, 0, 0.3);border-radius: 6px;cursor: pointer;}::-webkit-scrollbar {width: 0px;background: transparent;}
+    </style>
+
+</head>
+
+
+<body class="min-h-screen antialiased text-white bg-[#0B0F12]">
+
+<header class="relative">
+
+    <nav class="fixed w-full z-50  bg-gradient-to-b from-black/50 via-black/20 to-gradient">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div id="navUser">
+                <div class="flex h-16 items-center justify-between">
+
+                    <a href="#" class="flex items-start gap-2">
+                        <img src="https://i.imgur.com/KlmF7aZ.png" style="height: 70px;object-fit: contain;">
+                    </a>
+
+
+                    <div class="hidden md:flex bottom-0 items-center gap-2">
+                        <a href="#imagenes"
+                           class="px-3 py-1.5 rounded-full bg-white/5 ring-1 ring-white/15 text-sm font-medium text-white/90 hover:text-white/50 transition font-sans">Galeria</a>
+                        <a href="#precios"
+                           class="px-3 py-1.5 rounded-full bg-white/5 ring-1 ring-white/15 text-sm font-medium text-white/90 hover:text-white/50 transition font-sans">Precios</a>
+                        <a href="#faq"
+                           class="px-3 py-1.5 rounded-full bg-white/5 ring-1 ring-white/15 text-sm font-medium text-white/90 hover:text-white/50 transition font-sans">Preguntas</a>
+                    </div>
+                    <div class="hidden md:flex items-center gap-3">
+
+                        <button id="loginBtn" onclick="openLoginModal()"
+                                class="text-sm font-medium text-white/80 hover:text-white transition font-sans">
+                            Panel STAFF
+                        </button>
+
+                        <a href="#reserva"
+                           class="inline-flex items-center gap-2 rounded-full bg-white text-gray-900 px-4 py-2 text-sm  hover:bg-white/90 transition font-sans">
+                            ¡Reserva!
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+
+            <div id="navAdmin" class="hidden">
+                <div class="flex h-16 items-center justify-between">
+                    <a href="#" class="flex items-start gap-2">
+                        <img src="https://i.imgur.com/KlmF7aZ.png" style="height: 70px;object-fit: contain;">
+                    </a>
+
+                    <div class="hidden md:flex items-center gap-2">
+                        <div id="loginSection">
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+
+        </div>
+
+
+    </nav>
+
+
+    <div id="loginModal" class="hidden">
+        <div class="w-full h-full fixed z-50 flex items-center justify-center bg-white/60">
+
+            <div class="bg-white rounded-3xl p-6 w-fit h-fit flex flex-col items-center justify-center z-60">
+                <div class="card-content w-[300px] ">
+                    <div class="w-full flex flex-row items-center justify-between">
+                        <h3 class="text-xl font-semibold text-neutral-500 mb-4">Inicio de sesión.</h3>
+                        <button onclick="closeLoginModal()" class="text-red-500 hover:text-red-600 rounded-full  mb-4 transition" aria-label="Close">
+                            <svg width="20" height="20" stroke-width="2" class="opacity-80" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path>
+                            </svg>
+                        </button>
+                    </div>
+                    <div>
+                        <form class="space-y-4 mb-6">
+                            <div>
+                                <label for="username" class="text-neutral-500 text-xs font-medium block mb-2">Nombre.</label>
+                                <input type="text" id="username" class="w-full bg-neutral-100 border rounded-xl px-4 py-3 text-black focus:outline-none focus:ring-2 focus:ring-neutral-600 text-sm" placeholder="Nombre de usuario..." required="">
+                            </div>
+
+                            <div>
+                                <label for="password" class="text-neutral-500 text-xs mb-2 font-medium block ">Contraseña.</label>
+                                <input type="password" id="password" class="w-full bg-neutral-100 border rounded-xl px-4 py-3 text-black focus:outline-none focus:ring-2 focus:ring-neutral-600 text-sm" placeholder="••••••••" required="">
+                            </div>
+
+                        </form>
+
+                        <div class="flex justify-between text-sm space-x-3">
+                            <button type="submit" onclick="login()" type="submit" class="flex-1 px-4 py-2.5 bg-neutral-800 hover:bg-neutral-700 text-neutral-200 rounded-xl transition flex items-center justify-center font-medium">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1"></path>
+                                </svg>
+                                Entrar al panel..
+                            </button>
+
+                        </div>
+                    </div>
+                </div>
+                </form>
+            </div>
+        </div>
+
+    </div>
+
+</header>
+
+<div class="admin hidden">
+
+    <div class=" bg-neutral-950 pt-[100px] w-full h-full px-12 pb-10 rounded-3xl relative">
+
+        <div class="flex flex-row w-full min-h-[400px] overflow-auto h-full relative gap-x-5 gap-y-3">
+
+            <aside class="flex w-[370px] h-fit flex-col m-1 bg-neutral-900/60 ring-neutral-800 ring-1 rounded-3xl p-6">
+                <div class="flex items-center pb-3  border-b border-neutral-800  justify-between">
+                    <div class="inline-flex items-center gap-2">
+                     <span class="text-white text-sm font-medium tracking-tight font-geist">
+                      Panel Administrativo
+                    </span>
+                    </div>
+
+                </div>
+
+                <div class="mt-4 flex items-center gap-3">
+                    <img src="https://provinciaradio.com.ar/images/IMG-ef786544-b323-4ef4-9944-5a997d0f90fe.jpg" alt="Avatar" class="w-8 h-8 object-cover ring-neutral-700 ring-1 rounded-full">
+                    <div class="">
+                        <p class="text-white text-sm font-medium tracking-tight font-geist">
+                            Balneario Torreón
+                        </p>
+                        <p class="text-neutral-400 text-xs font-geist">Cuenta #19820</p>
+                    </div>
+                </div>
+
+                <div class="mt-6">
+                    <p class="text-[11px] uppercase tracking-[0.2em] text-neutral-500 mb-2 font-geist">
+                        Navegación
+                    </p>
+                    <nav class="space-y-1">
+                        <button id="navCarpas" onclick="showAdminSection('carpas')" class="w-full flex items-center gap-3 px-3 py-2 rounded-xl text-sm text-neutral-100 bg-neutral-800 ring-1 ring-neutral-700 font-geist" href="#">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-triangle" viewBox="0 0 16 16">
+                                <path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.15.15 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.2.2 0 0 1-.054.06.1.1 0 0 1-.066.017H1.146a.1.1 0 0 1-.066-.017.2.2 0 0 1-.054-.06.18.18 0 0 1 .002-.183L7.884 2.073a.15.15 0 0 1 .054-.057m1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767z"/>
+                            </svg>
+                            Carpas
+                        </button>
+                        <button id="navClientes" onclick="showAdminSection('clientes')" class="w-full flex items-center gap-3 px-3 py-2 rounded-xl text-sm text-neutral-300 hover:bg-neutral-800 transition font-geist" href="#">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
+                                <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6"/>
+                            </svg>
+                            Clientes
+                        </button>
+                        <button id="navReservas" onclick="showAdminSection('reservas')" class="w-full flex items-center gap-3 px-3 py-2 rounded-xl text-sm text-neutral-300 hover:bg-neutral-800 transition font-geist" href="#">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-ui-radios" viewBox="0 0 16 16">
+                                <path d="M7 2.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-7a.5.5 0 0 1-.5-.5zM0 12a3 3 0 1 1 6 0 3 3 0 0 1-6 0m7-1.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-7a.5.5 0 0 1-.5-.5zm0-5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5m0 8a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5M3 1a3 3 0 1 0 0 6 3 3 0 0 0 0-6m0 4.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3"/>
+                            </svg>
+                            Reservas
+                        </button>
+
+
+                    </nav>
+                </div>
+
+            </aside>
+
+
+            <section id="secCarpas" class="w-full p-1 ">
+                <main class="lg:col-span-6  bg-neutral-900/60 ring-1 ring-neutral-800 rounded-2xl p-4 sm:p-6  w-full relative overflow-hidden">
+                    <header class="flex items-start justify-between mb-5">
+                        <div class="">
+                            <h2 class="text-xl sm:text-2xl text-white font-geist font-light tracking-tighter" style="">
+                                Sección Carpas
+                            </h2>
+                            <p class="text-sm text-neutral-400 mt-1 font-geist">
+                                Registros y creación
+                            </p>
+                        </div>
+
+                    </header>
+
+                    <nav class="flex gap-2 mb-4">
+                        <button onclick="showSubSection('carpas','carp1')" id="navCarp1" class="subnav bg-neutral-800 px-3 py-1 rounded text-sm">Crear Carpa</button>
+                        <button onclick="showSubSection('carpas','carp2')" id="navCarp2" class="subnav text-neutral-300 hover:bg-neutral-800 px-3 py-1 rounded text-sm">Registros</button>
+                        <button onclick="showSubSection('carpas','carp3')" id="navCarp3" class="subnav text-neutral-300 hover:bg-neutral-800 px-3 py-1 rounded text-sm">Eliminar</button>
+                    </nav>
+
+                    <div id="carpas-carp1">
+                        <div class="w-[380px] flex flex-col ">
+                            <div class="w-full flex items-center justify-between mt-3 mb-3">
+                                <div class="flex items-center space-x-3">
+                                    <div class="w-10 h-10 rounded-xl bg-gradient-to-r from-green-500 to-green-700 flex items-center justify-center">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-plus">
+                                            <path d="M5 12h14"></path>
+                                            <path d="M12 5v14"></path>
+                                        </svg>
+                                    </div>
+                                    <span class="font-medium font-sans" style="transition: outline 0.1s ease-in-out;">Nueva carpa</span>
+                                </div>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="capacidad" class="block text-xs text-neutral-400 font-sans">Capacidad de la carpa <span class="text-neutral-500"> *</span></label>
+                                <input id="capacidad" name="name" type="number" min="5" max="6" minlength="1" maxlength="1" placeholder="Capacidad (EJ: 6)" class="w-full pl-3 pr-3 py-2.5 text-sm rounded-xl ring-1 ring-neutral-800 focus:ring-2 mt-2 text-white focus:ring-neutral-700 outline-none bg-neutral-800 placeholder:text-neutral-700 font-sans">
+                            </div>
+                            <div class="flex flex-row w-full mb-3 gap-4">
+                                <label><input type="checkbox" id="vistaMar"> Frente al mar</label><br>
+                                <label><input type="checkbox" id="sombrilla"> Con sombrilla</label><br>
+                            </div>
+                            <button onclick="crearCarpa()" class="bg-blue-600 text-white px-4 w-fit py-2 rounded-full mt-2">Crear Carpa</button>
+
+                        </div>
+
+
+                    </div>
+                    <div id="carpas-carp2" class="hidden">
+                        <div class="w-full flex flex-col mb-4">
+                            <div class="w-full flex flex-row items-center justify-between mt-3 mb-3">
+                                <div class="flex items-center space-x-3">
+                                    <div class="w-10 h-10 rounded-xl bg-gradient-to-r from-blue-500 to-blue-700 flex items-center justify-center">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-calendar-check" viewBox="0 0 16 16">
+                                            <path d="M10.854 7.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7.5 9.793l2.646-2.647a.5.5 0 0 1 .708 0"/>
+                                            <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5M1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4z"/>
+                                        </svg>
+                                    </div>
+                                    <span class="font-medium font-sans" style="transition: outline 0.1s ease-in-out;">Ultimos Registros</span>
+                                </div>
+                                <button onclick="listarCarpas()" class="h-9 w-9 rounded-lg bg-green-600 hover:bg-green-700 transition-all text-white flex items-center justify-center">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-arrow-clockwise" viewBox="0 0 16 16">
+                                        <path fill-rule="evenodd" d="M8 3a5 5 0 1 0 4.546 2.914.5.5 0 0 1 .908-.417A6 6 0 1 1 8 2z"></path>
+                                        <path d="M8 4.466V.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384L8.41 4.658A.25.25 0 0 1 8 4.466"></path>
+                                    </svg>
+                                </button>
+
+                            </div>
+                        </div>
+
+                        <table class="w-full divide-y divide-neutral-800 pt-3 ">
+                            <thead>
+                            <tr>
+                                <th scope="col" class="px-6 py-3 text-start text-xs font-medium text-gray-200 uppercase">
+                                    ID
+                                </th>
+                                <th scope="col" class="px-6 py-3 text-start text-xs font-medium text-gray-200 uppercase ">
+                                    Capacidad
+                                </th>
+                                <th scope="col" class="px-6 py-3 text-start text-xs font-medium text-gray-200 uppercase ">
+                                    Vista al mar
+                                </th>
+                                <th scope="col" class="px-6 py-3 text-end text-xs font-medium text-gray-200 uppercase ">
+                                    <div class="flex flex-row justify-end">
+                                        <div class="w-fit">
+                                            STATUS
+                                        </div>
+                                        <div class="w-fit ml-2">
+                                            <div class="h-[15px] w-[15px] rounded-full bg-neutral-600">
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </th>
+                            </tr>
+                            </thead>
+                            <tbody id="tablaCarpas" class="w-full divide-y divide-neutral-800 ">
+                            <tr>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-neutral-200 ">
+                                    #0
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-neutral-400 ">
+                                    Cargando...
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-neutral-400 ">
+                                    Cargando...
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-right text-neutral-400 ">
+                                    <div class="flex flex-row justify-end">
+                                        <div class="w-fit">
+                                            Disponible
+                                        </div>
+                                        <div class="w-fit ml-2">
+                                            <div class="h-[15px] w-[15px] rounded-full bg-neutral-600">
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+
+
+                    </div>
+                    <div id="carpas-carp3" class="hidden">
+                        <div class="w-fit flex flex-col ">
+                            <div class="w-full flex flex-col mb-4">
+                                <div class="w-full flex flex-row items-center justify-between mt-3 mb-3">
+                                    <div class="flex items-center space-x-3">
+                                        <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-red-500 to-red-600 flex items-center justify-center">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-folder-x" viewBox="0 0 16 16">
+                                                <path d="M.54 3.87.5 3a2 2 0 0 1 2-2h3.672a2 2 0 0 1 1.414.586l.828.828A2 2 0 0 0 9.828 3h3.982a2 2 0 0 1 1.992 2.181L15.546 8H14.54l.265-2.91A1 1 0 0 0 13.81 4H2.19a1 1 0 0 0-.996 1.09l.637 7a1 1 0 0 0 .995.91H9v1H2.826a2 2 0 0 1-1.991-1.819l-.637-7a2 2 0 0 1 .342-1.31zm6.339-1.577A1 1 0 0 0 6.172 2H2.5a1 1 0 0 0-1 .981l.006.139q.323-.119.684-.12h5.396z"/>
+                                                <path d="M11.854 10.146a.5.5 0 0 0-.707.708L12.293 12l-1.146 1.146a.5.5 0 0 0 .707.708L13 12.707l1.146 1.147a.5.5 0 0 0 .708-.708L13.707 12l1.147-1.146a.5.5 0 0 0-.707-.708L13 11.293z"/>
+                                            </svg>
+                                        </div>
+                                        <span class="font-medium font-sans" style="transition: outline 0.1s ease-in-out;">Eliminar Carpas</span>
+                                    </div>
+
+
+                                </div>
+                            </div>
+
+                            <div class="w-full flex flex-col mb-4">
+                                <div class="w-full mb-3">
+                                    <label for="deleteCarpaId" class="block text-xs text-neutral-400 font-sans">Numero de carpa<span class="text-neutral-500"> *</span></label>
+                                    <input type="number" id="deleteCarpaId" class="w-full pl-3 pr-3 py-2.5 text-sm rounded-xl ring-1 ring-neutral-800 focus:ring-2 mt-2 text-white focus:ring-neutral-700 outline-none bg-neutral-800 placeholder:text-neutral-700 font-sans" placeholder="#1">
+                                </div>
+                                <div class="w-full">
+                                    <button onclick="eliminarCarpa()" class="bg-red-600 w-fit text-white px-4 py-2 rounded-full">Eliminar</button>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </main>
+
+            </section>
+
+            <section id="secClientes" class="w-full p-1 hidden">
+                <main class="lg:col-span-6  bg-neutral-900/60 ring-1 ring-neutral-800 rounded-2xl p-4 sm:p-6  w-full relative overflow-hidden">
+                    <header class="flex items-start justify-between mb-5">
+                        <div class="">
+                            <h2 class="text-xl sm:text-2xl text-white font-geist font-light tracking-tighter" style="">
+                                Sección Clientes
+                            </h2>
+                            <p class="text-sm text-neutral-400 mt-1 font-geist">
+                                Creación y registro de clientes.
+                            </p>
+                        </div>
+
+                    </header>
+
+                    <nav class="flex gap-2 mb-4">
+                        <button onclick="showSubSection('clientes','c1')" id="navC1" class="subnav bg-neutral-800 px-3 py-1 rounded text-sm">Crear Cliente</button>
+                        <button onclick="showSubSection('clientes','c2')" id="navC2" class="subnav text-neutral-300 hover:bg-neutral-800 px-3 py-1 rounded text-sm">Registros</button>
+                        <button onclick="showSubSection('clientes','c3')" id="navC3" class="subnav text-neutral-300 hover:bg-neutral-800 px-3 py-1 rounded text-sm">Eliminar</button>
+                    </nav>
+
+                    <div id="clientes-c1">
+                        <div class="w-[380px] flex flex-col ">
+                            <div class="w-full flex items-center justify-between mt-3 mb-3">
+                                <div class="flex items-center space-x-3">
+                                    <div class="w-10 h-10 rounded-xl bg-gradient-to-r from-green-500 to-green-700 flex items-center justify-center">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-plus">
+                                            <path d="M5 12h14"></path>
+                                            <path d="M12 5v14"></path>
+                                        </svg>
+                                    </div>
+                                    <span class="font-medium font-sans" style="transition: outline 0.1s ease-in-out;">Nuevo Cliente</span>
+                                </div>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="nombre" class="block text-xs text-neutral-400 font-sans">Nombre del cliente <span class="text-neutral-500"> *</span></label>
+                                <input id="nombre" name="nombre" type="text" minlength="4" maxlength="20" placeholder="Nombre / Apellido" class="w-full pl-3 pr-3 py-2.5 text-sm rounded-xl ring-1 ring-neutral-800 focus:ring-2 mt-2 text-white focus:ring-neutral-700 outline-none bg-neutral-800 placeholder:text-neutral-700 font-sans">
+                            </div>
+                            <div class="mb-3">
+                                <label for="dni" class="block text-xs text-neutral-400 font-sans">Numero de documento<span class="text-neutral-500"> *</span></label>
+                                <input id="dni" name="dni" type="text" minlength="8" maxlength="8" placeholder="47 *** ***" class="w-full pl-3 pr-3 py-2.5 text-sm rounded-xl ring-1 ring-neutral-800 focus:ring-2 mt-2 text-white focus:ring-neutral-700 outline-none bg-neutral-800 placeholder:text-neutral-700 font-sans">
+                            </div>
+                            <div class="mb-3">
+                                <label for="telefono" class="block text-xs text-neutral-400 font-sans">Numero de telefono<span class="text-neutral-500"> *</span></label>
+                                <input id="telefono" name="telefono" type="text" minlength="10" maxlength="10" placeholder="223 ***-****" class="w-full pl-3 pr-3 py-2.5 text-sm rounded-xl ring-1 ring-neutral-800 focus:ring-2 mt-2 text-white focus:ring-neutral-700 outline-none bg-neutral-800 placeholder:text-neutral-700 font-sans">
+                            </div>
+                            <button onclick="crearCliente()" class="bg-blue-600 w-fit text-white px-4 py-2 rounded-full mt-2">Registrar Cliente</button>
+                        </div>
+                    </div>
+                    <div id="clientes-c2" class="hidden">
+                        <div class="w-full flex flex-col mb-4">
+                            <div class="w-full flex flex-row items-center justify-between mt-3 mb-3">
+                                <div class="flex items-center space-x-3">
+                                    <div class="w-10 h-10 rounded-xl bg-gradient-to-r from-blue-500 to-blue-800 flex items-center justify-center">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-calendar-check" viewBox="0 0 16 16">
+                                            <path d="M10.854 7.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7.5 9.793l2.646-2.647a.5.5 0 0 1 .708 0"/>
+                                            <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5M1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4z"/>
+                                        </svg>
+                                    </div>
+                                    <span class="font-medium font-sans" style="transition: outline 0.1s ease-in-out;">Registro de clientes</span>
+                                </div>
+                                <button onclick="listarClientes()" class="h-9 w-9 rounded-lg bg-green-600 hover:bg-green-700 transition-all text-white flex items-center justify-center">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-arrow-clockwise" viewBox="0 0 16 16">
+                                        <path fill-rule="evenodd" d="M8 3a5 5 0 1 0 4.546 2.914.5.5 0 0 1 .908-.417A6 6 0 1 1 8 2z"></path>
+                                        <path d="M8 4.466V.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384L8.41 4.658A.25.25 0 0 1 8 4.466"></path>
+                                    </svg>
+                                </button>
+
+                            </div>
+                        </div>
+
+                        <table class="w-full divide-y divide-neutral-800 pt-3 ">
+                            <thead>
+                            <tr>
+                                <th scope="col" class="px-6 py-3 text-start text-xs font-medium text-gray-200 uppercase">
+                                    ID
+                                </th>
+                                <th scope="col" class="px-6 py-3 text-start text-xs font-medium text-gray-200 uppercase ">
+                                    Nombre
+                                </th>
+                                <th scope="col" class="px-6 py-3 text-start text-xs font-medium text-gray-200 uppercase ">
+                                    Nro. Documento
+                                </th>
+                                <th scope="col" class="px-6 py-3 text-end text-xs font-medium text-gray-200 uppercase ">
+                                    Telefono
+                                </th>
+                            </tr>
+                            </thead>
+                            <tbody id="tablaClientes" class="w-full divide-y divide-neutral-800 ">
+                            <tr>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-neutral-200 ">
+                                    #0
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-neutral-400 ">
+                                    Cargando...
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-neutral-400 ">
+                                    Cargando...
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-right text-neutral-400 ">
+                                    Cargando...
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+
+                    </div>
+                    <div id="clientes-c3" class="hidden">
+                        <div class="w-fit flex flex-col ">
+                            <div class="w-full flex flex-col mb-4">
+                                <div class="w-full flex flex-row items-center justify-between mt-3 mb-3">
+                                    <div class="flex items-center space-x-3">
+                                        <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-red-500 to-red-600 flex items-center justify-center">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-x-fill" viewBox="0 0 16 16">
+                                                <path fill-rule="evenodd" d="M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6m6.146-2.854a.5.5 0 0 1 .708 0L14 6.293l1.146-1.147a.5.5 0 0 1 .708.708L14.707 7l1.147 1.146a.5.5 0 0 1-.708.708L14 7.707l-1.146 1.147a.5.5 0 0 1-.708-.708L13.293 7l-1.147-1.146a.5.5 0 0 1 0-.708"/>
+                                            </svg>
+                                        </div>
+                                        <span class="font-medium font-sans" style="transition: outline 0.1s ease-in-out;">Eliminar Clientes</span>
+                                    </div>
+
+
+                                </div>
+                            </div>
+
+                            <div class="w-full flex flex-col mb-4">
+                                <div class="w-full mb-3">
+                                    <label for="deleteClienteId" class="block text-xs text-neutral-400 font-sans">Numero de cliente<span class="text-neutral-500"> *</span></label>
+                                    <input type="number" id="deleteClienteId" class="w-full pl-3 pr-3 py-2.5 text-sm rounded-xl ring-1 ring-neutral-800 focus:ring-2 mt-2 text-white focus:ring-neutral-700 outline-none bg-neutral-800 placeholder:text-neutral-700 font-sans" placeholder="#1">
+                                </div>
+                                <div class="w-full">
+                                    <button onclick="eliminarCliente()" class="bg-red-600 w-fit text-white px-4 py-2 rounded-full">Eliminar</button>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </main>
+
+            </section>
+
+            <section id="secReservas" class="w-full p-1 hidden">
+                <main class="lg:col-span-6  bg-neutral-900/60 ring-1 ring-neutral-800 rounded-2xl p-4 sm:p-6  w-full relative overflow-hidden">
+                    <header class="flex items-start justify-between mb-5">
+                        <div class="">
+                            <h2 class="text-xl sm:text-2xl text-white font-geist font-light tracking-tighter" style="">
+                                Sección Reservas
+                            </h2>
+                            <p class="text-sm text-neutral-400 mt-1 font-geist">
+                                Creación y registro de reservas.
+                            </p>
+                        </div>
+
+                    </header>
+
+                    <nav class="flex gap-2 mb-4">
+                        <button onclick="showSubSection('reservas','r1')" id="navR1" class="subnav bg-neutral-800 px-3 py-1 rounded text-sm">Crear Reserva</button>
+                        <button onclick="showSubSection('reservas','r2')" id="navR2" class="subnav text-neutral-300 hover:bg-neutral-800 px-3 py-1 rounded text-sm">Registro</button>
+                        <button onclick="showSubSection('reservas','r3')" id="navR3" class="subnav text-neutral-300 hover:bg-neutral-800 px-3 py-1 rounded text-sm">Eliminar</button>
+                    </nav>
+
+                    <div id="reservas-r1">
+                        <div class="w-fit flex flex-col ">
+                            <div class="w-full flex items-center justify-between mt-3 mb-3">
+                                <div class="flex items-center space-x-3">
+                                    <div class="w-10 h-10 rounded-xl bg-gradient-to-r from-green-500 to-green-700 flex items-center justify-center">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-plus">
+                                            <path d="M5 12h14"></path>
+                                            <path d="M12 5v14"></path>
+                                        </svg>
+                                    </div>
+                                    <span class="font-medium font-sans" style="transition: outline 0.1s ease-in-out;">Nueva Reserva</span>
+                                </div>
+                            </div>
+                            <div class="flex flex-row mb-3 gap-3">
+                                <div class="w-full">
+                                    <label for="resCliente" class="block text-xs text-neutral-400 font-sans">ID del cliente<span class="text-neutral-500"> *</span></label>
+                                    <input id="resCliente" name="resCliente" type="number" minlength="1" maxlength="3" min="0" max="999" placeholder="#1" class="w-full pl-3 pr-3 py-2.5 text-sm rounded-xl ring-1 ring-neutral-800 focus:ring-2 mt-2 text-white focus:ring-neutral-700 outline-none bg-neutral-800 placeholder:text-neutral-700 font-sans">
+                                </div>
+                                <div class="w-full">
+                                    <label for="resCarpa" class="block text-xs text-neutral-400 font-sans">ID de la carpa<span class="text-neutral-500"> *</span></label>
+                                    <input id="resCarpa" name="resCarpa" type="number" minlength="1" maxlength="3" min="0" max="999" placeholder="#1" class="w-full pl-3 pr-3 py-2.5 text-sm rounded-xl ring-1 ring-neutral-800 focus:ring-2 mt-2 text-white focus:ring-neutral-700 outline-none bg-neutral-800 placeholder:text-neutral-700 font-sans">
+                                </div>
+                            </div>
+
+                            <div class="flex flex-row mb-3 gap-3">
+                                <div class="w-full">
+                                    <label for="resDesde" class="block text-xs text-neutral-400 font-sans">Fecha DESDE<span class="text-neutral-500"> *</span></label>
+                                    <input type="date" id="resDesde" maxlength="10" minlength="10" placeholder="YYYY-MM-DD" class="w-full pl-3 pr-3 py-2.5 text-sm rounded-xl ring-1 ring-neutral-800 focus:ring-2 mt-2 text-white focus:ring-neutral-700 outline-none bg-neutral-800 placeholder:text-neutral-700 font-sans">
+                                </div>
+                                <div class="w-full">
+                                    <label for="resHasta" class="block text-xs text-neutral-400 font-sans">Fecha HASTA<span class="text-neutral-500"> *</span></label>
+                                    <input type="date" id="resHasta" maxlength="10" minlength="10" placeholder="YYYY-MM-DD" class="w-full pl-3 pr-3 py-2.5 text-sm rounded-xl ring-1 ring-neutral-800 focus:ring-2 mt-2 text-white focus:ring-neutral-700 outline-none bg-neutral-800 placeholder:text-neutral-700 font-sans">
+                                </div>
+                                <div class="w-fit">
+                                    <select id="resTipo" class="w-[100px] pl-3 pr-3 py-2.5 text-sm rounded-xl ring-1 ring-neutral-800 focus:ring-2 mt-2 text-white focus:ring-neutral-700 outline-none bg-neutral-800 placeholder:text-neutral-700 font-sans">
+                                        <option value="Día">Por día</option>
+                                        <option value="Mes">Por mes</option>
+                                        <option value="Temporada">Por temporada</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="flex mb-3">
+                                <div class="w-full">
+                                    <button onclick="crearReserva()" class="bg-blue-600 text-white px-4 py-2 rounded-full w-fit mt-2">Crear Reserva</button>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+                    <div id="reservas-r2" class="hidden">
+                        <div class="w-full flex flex-col mb-4">
+                            <div class="w-full flex flex-row items-center justify-between mt-3 mb-3">
+                                <div class="flex items-center space-x-3">
+                                    <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-purple-500 to-purple-700 flex items-center justify-center">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-book" viewBox="0 0 16 16">
+                                            <path d="M1 2.828c.885-.37 2.154-.769 3.388-.893 1.33-.134 2.458.063 3.112.752v9.746c-.935-.53-2.12-.603-3.213-.493-1.18.12-2.37.461-3.287.811zm7.5-.141c.654-.689 1.782-.886 3.112-.752 1.234.124 2.503.523 3.388.893v9.923c-.918-.35-2.107-.692-3.287-.81-1.094-.111-2.278-.039-3.213.492zM8 1.783C7.015.936 5.587.81 4.287.94c-1.514.153-3.042.672-3.994 1.105A.5.5 0 0 0 0 2.5v11a.5.5 0 0 0 .707.455c.882-.4 2.303-.881 3.68-1.02 1.409-.142 2.59.087 3.223.877a.5.5 0 0 0 .78 0c.633-.79 1.814-1.019 3.222-.877 1.378.139 2.8.62 3.681 1.02A.5.5 0 0 0 16 13.5v-11a.5.5 0 0 0-.293-.455c-.952-.433-2.48-.952-3.994-1.105C10.413.809 8.985.936 8 1.783"/>
+                                        </svg>
+                                    </div>
+                                    <span class="font-medium font-sans" style="transition: outline 0.1s ease-in-out;">Registro de Reservas</span>
+                                </div>
+                                <button onclick="listarReservas()" class="h-9 w-9 rounded-lg bg-green-600 hover:bg-green-700 transition-all text-white flex items-center justify-center">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-arrow-clockwise" viewBox="0 0 16 16">
+                                        <path fill-rule="evenodd" d="M8 3a5 5 0 1 0 4.546 2.914.5.5 0 0 1 .908-.417A6 6 0 1 1 8 2z"></path>
+                                        <path d="M8 4.466V.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384L8.41 4.658A.25.25 0 0 1 8 4.466"></path>
+                                    </svg>
+                                </button>
+
+                            </div>
+                        </div>
+
+                        <table class="w-full divide-y divide-neutral-800 pt-3 ">
+                            <thead>
+                            <tr>
+                                <th scope="col" class="px-6 py-3 text-start text-xs font-medium text-gray-200 uppercase">
+                                    ID
+                                </th>
+                                <th scope="col" class="px-6 py-3 text-start text-xs font-medium text-gray-200 uppercase ">
+                                    Nro. Cliente
+                                </th>
+                                <th scope="col" class="px-6 py-3 text-start text-xs font-medium text-gray-200 uppercase ">
+                                    Nro. Carpa
+                                </th>
+                                <th scope="col" class="px-6 py-3 text-start text-xs font-medium text-gray-200 uppercase ">
+                                    Desde
+                                </th>
+                                <th scope="col" class="px-6 py-3 text-start text-xs font-medium text-gray-200 uppercase ">
+                                    Hasta
+                                </th>
+                                <th scope="col" class="px-6 py-3 text-xs font-medium  text-gray-200 uppercase ">
+                                    <div class="flex flex-row justify-end">
+                                        <div class="w-fit">
+                                            Tipo
+                                        </div>
+                                        <div class="w-fit ml-2">
+                                            <div class="h-[15px] w-[15px] rounded-full bg-neutral-600">
+
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </th>
+                            </tr>
+                            </thead>
+                            <tbody id="tablaReservas" class="w-full divide-y divide-neutral-800 ">
+                            <tr>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-neutral-200 ">
+                                    #0
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-neutral-400 ">
+                                    #1
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-neutral-400 ">
+                                    #2
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm  text-neutral-400 ">
+                                    YYYY/MM/DD
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-neutral-400 ">
+                                    YYYY/MM/DD
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-right text-neutral-400 ">
+                                    <div class="flex flex-row justify-end items-center">
+                                        <div class="w-fit">
+                                            Por Dia
+                                        </div>
+                                        <div class="w-fit ml-2">
+                                            <div class="h-[15px] w-[15px] rounded-full bg-neutral-600">
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div id="reservas-r3" class="hidden">
+                        <div class="w-fit flex flex-col ">
+                            <div class="w-full flex flex-col mb-4">
+                                <div class="w-full flex flex-row items-center justify-between mt-3 mb-3">
+                                    <div class="flex items-center space-x-3">
+                                        <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-red-500 to-red-600 flex items-center justify-center">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash3-fill" viewBox="0 0 16 16">
+                                                <path d="M11 1.5v1h3.5a.5.5 0 0 1 0 1h-.538l-.853 10.66A2 2 0 0 1 11.115 16h-6.23a2 2 0 0 1-1.994-1.84L2.038 3.5H1.5a.5.5 0 0 1 0-1H5v-1A1.5 1.5 0 0 1 6.5 0h3A1.5 1.5 0 0 1 11 1.5m-5 0v1h4v-1a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5M4.5 5.029l.5 8.5a.5.5 0 1 0 .998-.06l-.5-8.5a.5.5 0 1 0-.998.06m6.53-.528a.5.5 0 0 0-.528.47l-.5 8.5a.5.5 0 0 0 .998.058l.5-8.5a.5.5 0 0 0-.47-.528M8 4.5a.5.5 0 0 0-.5.5v8.5a.5.5 0 0 0 1 0V5a.5.5 0 0 0-.5-.5"/>
+                                            </svg>
+                                        </div>
+                                        <span class="font-medium font-sans" style="transition: outline 0.1s ease-in-out;">Eliminar Reserva</span>
+                                    </div>
+
+
+                                </div>
+                            </div>
+
+                            <div class="w-full flex flex-col mb-4">
+                                <div class="w-full mb-3">
+                                    <label for="deleteReservaId" class="block text-xs text-neutral-400 font-sans">Numero de reserva<span class="text-neutral-500"> *</span></label>
+                                    <input type="number" id="deleteReservaId" class="w-full pl-3 pr-3 py-2.5 text-sm rounded-xl ring-1 ring-neutral-800 focus:ring-2 mt-2 text-white focus:ring-neutral-700 outline-none bg-neutral-800 placeholder:text-neutral-700 font-sans" placeholder="#1">
+                                </div>
+                                <div class="w-full">
+                                    <button onclick="eliminarReserva()" class="bg-red-600 w-fit text-white px-4 py-2 rounded-full">Eliminar</button>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                </main>
+            </section>
+
+        </div>
+    </div>
+
+</div>
+
+<div class="user">
+
+    <section id="hero" class="relative ">
+        <div class="absolute inset-0">
+            <img src="https://scontent.fmdq3-1.fna.fbcdn.net/v/t39.30808-6/536267372_1231108169043109_7885634467781005367_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=127cfc&_nc_ohc=EnNrAu7UwAEQ7kNvwGSF4Lm&_nc_oc=Adl6sxOa2PGE3qi8Ldzedh1sKj7F9Baz9nXQ3L9jZOgYYvZFxJ_oGtNsepjDOiFTNG7KDIMZ9JOb_1muVsx0eXHb&_nc_zt=23&_nc_ht=scontent.fmdq3-1.fna&_nc_gid=Tlf5wgw9Hl4a5KbG58kKsA&oh=00_Afg_bAd7Aed-QGfr4tTYjPT6OUdWdi5OyMBkf3E1kJe7UA&oe=69172B2A"
+                 alt="IMG BalnearioTorreon" class="w-full h-full object-cover" style="">
+            <div class="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-black/80"></div>
+        </div>
+        <div class="relative z-20 mx-auto max-w-5xl z-20 px-4 sm:px-6 lg:px-8 pt-[180px] pb-24 lg:pb-40 text-center">
+            <h1 class="sm:text-5xl md:text-6xl text-4xl font-medium tracking-tight font-sans mt-5">
+                somos Balneario Torreón <br>
+                <span class="lg:italic font-medium text-emerald-300 font-instrument-serif">
+                 energía y relax frente al mar.
+              </span>
+            </h1>
+
+            <div class="flex gap-3 mt-[200px] items-center justify-center">
+                <a href="#reserva"
+                   class="inline-flex items-center gap-2 rounded-full bg-white text-gray-900 px-5 py-3 text-sm sm:  hover:bg-white/90 transition font-sans">
+
+                    Reservas
+                </a>
+                <a href="#reserva"
+                   class="inline-flex items-center gap-2 sm: hover:bg-white/15 ring-1 ring-white/15 transition text-sm font-medium text-white font-sans bg-white/10 rounded-full pt-3 pr-5 pb-3 pl-5 backdrop-blur">
+
+                    Disponibilidad
+                </a>
+            </div>
+
+            <div class="mt-8 flex items-center justify-center gap-2 text-xs text-white/60">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                     stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                     data-lucide="lock" class="lucide lucide-lock h-4 w-4" data-icon-replaced="true"
+                     style="width: 12px; height: 12px; color: rgb(255, 255, 255);">
+                    <rect width="18" height="11" x="3" y="11" rx="2" ry="2"></rect>
+                    <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                </svg>
+                <span class="uppercase tracking-wider font-sans">Reservas seguras</span>
+            </div>
+        </div>
+    </section>
+
+    <section id="otros-datos" class="relative z-10 -mt-12 -top-20 pb-24">
+        <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
+                <div class="rounded-2xl bg-white/5 ring-1 ring-white/10 p-4 backdrop-blur">
+                    <div class="flex gap-3 items-start">
+                          <span class="inline-flex h-9 w-9 items-center justify-center rounded-lg bg-white/10 ring-1 ring-white/15">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                 stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                 data-lucide="sparkles" class="lucide lucide-sparkles h-4 w-4 text-white/90"><path
+                                    d="M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594z"></path><path
+                                    d="M20 2v4"></path><path d="M22 4h-4"></path><circle cx="4" cy="20" r="2"></circle></svg>
+                          </span>
+                        <div class="">
+                            <p class="text-sm  tracking-tight font-sans">Gestión costera</p>
+                            <p class="text-xs text-white/70 font-sans">Recomendaciones según tu estilo.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="rounded-2xl bg-white/5 ring-1 ring-white/10 p-4 backdrop-blur">
+                    <div class="flex gap-3 items-start">
+                          <span class="inline-flex h-9 w-9 items-center justify-center rounded-lg bg-white/10 ring-1 ring-white/15">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                 stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                 data-lucide="clock" class="lucide lucide-clock h-4 w-4 text-white/90"><path d="M12 6v6l4 2"></path><circle
+                                    cx="12" cy="12" r="10"></circle></svg>
+                          </span>
+                        <div class="">
+                            <p class="text-sm  tracking-tight font-sans">Tiempo en vivo</p>
+                            <p class="text-xs text-white/70 font-sans">Se adapta al clima y a la marea.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="rounded-2xl bg-white/5 ring-1 ring-white/10 p-4 backdrop-blur">
+                    <div class="flex gap-3 items-start">
+                          <span class="inline-flex h-9 w-9 items-center justify-center rounded-lg bg-white/10 ring-1 ring-white/15">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                 stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                 data-lucide="wallet" class="lucide lucide-wallet h-4 w-4 text-white/90"><path
+                                    d="M19 7V4a1 1 0 0 0-1-1H5a2 2 0 0 0 0 4h15a1 1 0 0 1 1 1v4h-3a2 2 0 0 0 0 4h3a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1"></path><path
+                                    d="M3 5v14a2 2 0 0 0 2 2h15a1 1 0 0 0 1-1v-4"></path></svg>
+                          </span>
+                        <div class="">
+                            <p class="text-sm  tracking-tight font-sans">Precios claros</p>
+                            <p class="text-xs text-white/70 font-sans">Disfrutá sin gastar de más.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="ring-1 ring-white/10 bg-white/5 rounded-2xl pt-4 pr-4 pb-4 pl-4 backdrop-blur">
+                    <div class="flex gap-3 items-start">
+              <span class="inline-flex h-9 w-9 items-center justify-center rounded-lg bg-white/10 ring-1 ring-white/15">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                     stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                     data-lucide="shield-check" class="lucide lucide-shield-check h-4 w-4 text-white/90"><path
+                        d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"></path><path
+                        d="m9 12 2 2 4-4"></path></svg>
+              </span>
+                        <div class="">
+                            <p class="text-sm  tracking-tight font-sans">Privacidad total</p>
+                            <p class="text-xs text-white/70 font-sans">Tus datos quedan en tus manos.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="imagenes" class="max-w-7xl sm:px-6 sm:mt-0 mr-auto mb-24 ml-auto pr-4 pl-4">
+
+        <div class="text-center max-w-5xl mb-7 mr-auto ml-auto">
+        <span class="inline-flex items-center gap-2 sm:px-4 sm:py-2 animate-on-scroll [animation:fadeSlideIn_1s_ease-out_0.1s_both] text-xs font-medium text-violet-300 bg-violet-500/15 border-violet-400/30 border rounded-full pt-1.5 pr-3 pb-1.5 pl-3 animate">
+            Comunidad Torreón
+        </span>
+            <h2 class="sm:mt-6 sm:text-4xl lg:text-5xl xl:text-6xl animate-on-scroll [animation:fadeSlideIn_1s_ease-out_0.2s_both] text-3xl  tracking-tight mt-6 animate">
+                Unite a miles que disfrutan el verano en Mar del Plata
+            </h2>
+            <p class="sm:mt-4 sm: animate-on-scroll [animation:fadeSlideIn_1s_ease-out_0.3s_both] text-sm font-normal text-neutral-300 mt-3 animate">
+                Conectá con quienes aman el mar, el sol y el relax. En Balneario Torreón, cada día es una nueva historia para compartir.
+            </p>
+
+        </div>
+        <div class="relative mt-8 sm:mt-12">
+            <div class="mx-auto max-w-6xl overflow-hidden"
+                 style="mask-image: linear-gradient(to right, transparent, black 12%, black 88%, transparent),
+            linear-gradient(to top, black 15%, black 15%);
+            -webkit-mask-image: linear-gradient(to right, transparent, black 12%, black 88%, transparent),
+            linear-gradient(to top, black 15%, black 15%);
+            mask-composite: intersect; -webkit-mask-composite: destination-in;">
+
+                <div class="flex w-max" style="animation: marquee-left 80s linear infinite; will-change: transform;">
+
+
+                    <div class="flex flex-wrap gap-3 flex-shrink-0 pr-4">
+                        <div class="rounded-2xl overflow-hidden ring-1 ring-white/10 bg-white/5" style="width:400px; height:270px;">
+                            <img class="object-cover w-full h-full grayscale-[25%]"
+                                 src="https://media.elpatagonico.com/p/7fd03d32cbe00145312058708d4bff6c/adjuntos/193/imagenes/009/345/0009345386/1200x675/smart/mardelplata5.jpg"
+                                 alt="Balneario Torreón Mar del Plata">
+                        </div>
+
+                        <div class="rounded-2xl overflow-hidden ring-1 ring-white/10 bg-white/5" style="width:400px; height:270px;">
+                            <img class="object-cover w-full h-full grayscale-[25%]"
+                                 src="https://media-cdn.tripadvisor.com/media/photo-s/07/59/29/eb/el-torreon.jpg"
+                                 alt="El Torreón del Monje">
+                        </div>
+
+                        <div class="rounded-2xl overflow-hidden ring-1 ring-white/10 bg-white/5" style="width:400px; height:270px;">
+                            <img class="object-cover w-full h-full grayscale-[25%]"
+                                 src="https://b3255746.smushcdn.com/3255746/wp-content/uploads/2023/03/Mar-del-Plata-playa-centrica.jpg?lossy=2&strip=1&webp=1"
+                                 alt="Playa céntrica Mar del Plata">
+                        </div>
+
+                        <div class="rounded-2xl overflow-hidden ring-1 ring-white/10 bg-white/5" style="width:400px; height:270px;">
+                            <img class="object-cover w-full h-full grayscale-[25%]"
+                                 src="https://t4.ftcdn.net/jpg/06/20/72/89/360_F_620728919_xWf9IaJVvSfaY0X5zOonrc81q8ocXaw0.jpg"
+                                 alt="Costa atlántica argentina">
+                        </div>
+                    </div>
+
+
+                    <div class="flex flex-wrap gap-3 flex-shrink-0 pr-4">
+                        <div class="rounded-2xl overflow-hidden ring-1 ring-white/10 bg-white/5" style="width:400px; height:270px;">
+                            <img class="object-cover w-full h-full grayscale-[25%]"
+                                 src="https://cdnartic.ar/wl2olDVfx4pZpIKVI8PRLqh4RZs=/700x0/filters:no_upscale()/https://elmarplatensecdn.eleco.com.ar/media/2024/01/playa-torreon-del-monje.jpg"
+                                 alt="Balneario Torreón playa">
+                        </div>
+
+                        <div class="rounded-2xl overflow-hidden ring-1 ring-white/10 bg-white/5" style="width:400px; height:270px;">
+                            <img class="object-cover w-full h-full grayscale-[25%]"
+                                 src="https://www.infobae.com/resizer/v2/https%3A%2F%2Fs3.amazonaws.com%2Farc-wordpress-client-uploads%2Finfobae-wp%2Fwp-content%2Fuploads%2F2019%2F01%2F15120607%2FVerano-2019-asilo-unzue-y-torreon-del-monje-mar-del-plata-1920-4.jpg?auth=f3cfff3e0187404b0d1e20f96b7058636bea161652352069970a75a07d7380dc&smart=true&width=350&height=197&quality=85"
+                                 alt="Torreón del Monje verano">
+                        </div>
+
+                        <div class="rounded-2xl overflow-hidden ring-1 ring-white/10 bg-white/5" style="width:400px; height:270px;">
+                            <img class="object-cover w-full h-full grayscale-[25%]"
+                                 src="https://www.clarin.com/2020/01/28/9s_L6Z8B_360x240__1.jpg"
+                                 alt="Verano en Mar del Plata">
+                        </div>
+
+                        <div class="rounded-2xl overflow-hidden ring-1 ring-white/10 bg-white/5" style="width:400px; height:270px;">
+                            <img class="object-cover w-full h-full grayscale-[25%]"
+                                 src="https://media.istockphoto.com/id/523035121/es/foto/la-playa-del-oc%C3%A9ano-atl%C3%A1ntico-sur.jpg?s=612x612&w=0&k=20&c=S-70qkc3Gj9AxyoYxbKDBm3e550QVxMzsM09UQ0eq4A="
+                                 alt="Costa atlántica sur">
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <style>
+                @keyframes marquee-left {
+                    from {
+                        transform: translateX(0);
+                    }
+                    to {
+                        transform: translateX(-50%);
+                    }
+                }
+            </style>
+
+        </div>
+
+    </section>
+
+    <section id="principal" class="sm:p-8 rounded-3xl mx-8 pt-6 pr-6 pb-6 pl-6">
+        <div class="flex items-center gap-2 text-sm text-white/70">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                 stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
+                 data-lucide="route"
+                 class="lucide lucide-route h-4 w-4">
+                <circle cx="6" cy="19" r="3"></circle>
+                <path d="M9 19h8.5a3.5 3.5 0 0 0 0-7h-11a3.5 3.5 0 0 1 0-7H15"></path>
+                <circle cx="18" cy="5" r="3"></circle>
+            </svg>
+            <span class="font-normal font-sans">Tu Día en la Playa</span>
+        </div>
+
+
+        <div class="mt-6 grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4">
+
+            <article
+                    class="sm:p-6 flex flex-col min-h-[320px] bg-white/10 ring-1 ring-white/15 backdrop-blur rounded-2xl pt-5 pr-5 pb-5 pl-5 justify-between">
+                <div class="space-y-5">
+                    <div class="flex items-center gap-3">
+                        <div class="h-12 w-12 rounded-full bg-white/20 ring-1 ring-white/25 flex items-center justify-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                 fill="none"
+                                 stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
+                                 data-lucide="compass" class="lucide lucide-compass h-5 w-5 text-white/90">
+                                <path d="m16.24 7.76-1.804 5.411a2 2 0 0 1-1.265 1.265L7.76 16.24l1.804-5.411a2 2 0 0 1 1.265-1.265z"></path>
+                                <circle cx="12" cy="12" r="10"></circle>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="text-lg  text-white font-sans tracking-tight">01. Elegí tu lugar</h3>
+                            <p class="text-xs text-white/60 font-sans uppercase tracking-wider">Zona de elección</p>
+                        </div>
+                    </div>
+                    <p class="text-sm text-white/80 font-sans">Contanos tu estilo y dejá que Balneario Torreón prepare tu espacio ideal. Cada momento empieza con elegir tu rincón perfecto.</p>
+
+                    <div class="flex items-center gap-2 text-white/60">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                             stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
+                             data-lucide="clock" class="lucide lucide-clock h-4 w-4">
+                            <path d="M12 6v6l4 2"></path>
+                            <circle cx="12" cy="12" r="10"></circle>
+                        </svg>
+                        <span class="text-xs font-sans">2-3 minutos</span>
+                    </div>
+                </div>
+                <div class="mt-4 h-1.5 bg-white/10 rounded-full overflow-hidden">
+                    <div class="h-full bg-white/40 rounded-full" style="width: 25%;"></div>
+                </div>
+            </article>
+
+
+            <article
+                    class="sm:p-6 flex flex-col min-h-[320px] bg-white/10 ring-1 ring-white/15 backdrop-blur rounded-2xl pt-5 pr-5 pb-5 pl-5 justify-between">
+                <div class="space-y-5">
+                    <div class="flex items-center gap-3">
+                        <div class="h-12 w-12 rounded-full bg-white/20 ring-1 ring-white/25 flex items-center justify-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                 fill="none"
+                                 stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
+                                 data-lucide="sparkles" class="lucide lucide-sparkles h-5 w-5 text-white/90">
+                                <path d="M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594z"></path>
+                                <path d="M20 2v4"></path>
+                                <path d="M22 4h-4"></path>
+                                <circle cx="4" cy="20" r="2"></circle>
+                            </svg>
+                        </div>
+                        <div class="">
+                            <h3 class="text-lg  text-white font-sans tracking-tight">02. Planificá</h3>
+                            <p class="text-xs text-white/60 font-sans uppercase tracking-wider">Gestión playera</p>
+
+                        </div>
+                    </div>
+                    <p class="text-sm text-white/80 font-sans">Mirá cómo tu día perfecto toma forma. Torreón combina clima, horarios y servicios para que disfrutes sin preocuparte.</p>
+
+                    <div class="flex items-center gap-2">
+                        <div class="flex -space-x-1">
+                            <div class="h-6 w-6 rounded-full bg-white/20 ring-2 ring-white/20 flex items-center justify-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                     fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                     stroke-linejoin="round" data-lucide="map-pin"
+                                     class="lucide lucide-map-pin h-3 w-3 text-white/70">
+                                    <path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"></path>
+                                    <circle cx="12" cy="10" r="3"></circle>
+                                </svg>
+                            </div>
+
+                        </div>
+                        <span class="text-xs text-white/60 font-sans">TOP Gastronomia</span>
+
+                    </div>
+                </div>
+                <div class="mt-4 h-1.5 bg-white/10 rounded-full overflow-hidden">
+                    <div class="h-full bg-white/40 rounded-full" style="width: 50%;"></div>
+                </div>
+            </article>
+
+
+            <article
+                    class="sm:p-6 flex flex-col min-h-[320px] bg-white/10 ring-1 ring-white/15 backdrop-blur rounded-2xl pt-5 pr-5 pb-5 pl-5 justify-between">
+                <div class="space-y-5">
+                    <div class="flex items-center gap-3">
+                        <div class="h-12 w-12 rounded-full bg-white/20 ring-1 ring-white/25 flex items-center justify-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                 fill="none"
+                                 stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
+                                 data-lucide="camera" class="lucide lucide-camera h-5 w-5 text-white/90">
+                                <path d="M13.997 4a2 2 0 0 1 1.76 1.05l.486.9A2 2 0 0 0 18.003 7H20a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2h1.997a2 2 0 0 0 1.759-1.048l.489-.904A2 2 0 0 1 10.004 4z"></path>
+                                <circle cx="12" cy="13" r="3"></circle>
+                            </svg>
+                        </div>
+                        <div class="">
+                            <h3 class="text-lg  text-white font-sans tracking-tight">03. Viví</h3>
+                            <p class="text-xs text-white/60 font-sans uppercase tracking-wider">Sentí la playa</p>
+
+                        </div>
+                    </div>
+                    <p class="text-sm text-white/80 font-sans">Tu descanso fluye naturalmente. Ajustes en tiempo real te mantienen conectado con el ritmo del mar.</p>
+
+                    <div class="space-y-2">
+                        <div class="flex items-center gap-2 text-white/60">
+                            <div class="h-2 w-2 rounded-full bg-green-400"></div>
+                            <span class="text-xs font-sans">Clima Perfecto</span>
+                        </div>
+                        <div class="flex items-center gap-2 text-white/60">
+                            <div class="h-2 w-2 rounded-full bg-blue-400"></div>
+                            <span class="text-xs font-sans">Ubicación adaptable</span>
+                        </div>
+                        <div class="flex items-center gap-2 text-white/60">
+                            <div class="h-2 w-2 rounded-full bg-purple-400"></div>
+                            <span class="text-xs font-sans">Flujo sin pausas</span>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="mt-4 h-1.5 bg-white/10 rounded-full overflow-hidden">
+                    <div class="h-full bg-white/40 rounded-full" style="width: 75%;"></div>
+                </div>
+            </article>
+
+
+            <article
+                    class="sm:p-6 flex flex-col min-h-[320px] bg-white/10 ring-1 ring-white/15 backdrop-blur rounded-2xl pt-5 pr-5 pb-5 pl-5 justify-between">
+                <div class="space-y-5">
+                    <div class="flex items-center gap-3">
+                        <div class="h-12 w-12 rounded-full bg-white/20 ring-1 ring-white/25 flex items-center justify-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                 fill="none"
+                                 stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
+                                 data-lucide="book-open" class="lucide lucide-book-open h-5 w-5 text-white/90">
+                                <path d="M12 7v14"></path>
+                                <path d="M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z"></path>
+                            </svg>
+                        </div>
+                        <div class="">
+                            <h3 class="text-lg  text-white font-sans tracking-tight">04. Recordá</h3>
+                            <p class="text-xs text-white/60 font-sans uppercase tracking-wider">Fin del día</p>
+
+                        </div>
+                    </div>
+                    <p class="text-sm text-white/80 font-sans">Guardá tus momentos y sensaciones. Tus experiencias ayudan a que Balneario Torreón mejore cada visita futura.</p>
+                    <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/10 ring-1 ring-white/15">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                             stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
+                             data-lucide="star" class="lucide lucide-star h-3 w-3 text-white/70">
+                            <path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"></path>
+                        </svg>
+                        <span class="text-xs text-white/70 font-sans">Dejar tu opinion.</span>
+                    </div>
+                </div>
+                <div class="mt-4 h-1.5 bg-white/10 rounded-full overflow-hidden">
+                    <div class="h-full bg-white/40 rounded-full" style="width: 100%;"></div>
+                </div>
+            </article>
+        </div>
+
+    </section>
+
+    <section id="precios"
+             class="sm:pt-24 sm:pb-24 animate-on-scroll [animation:fadeSlideIn_1s_ease-out_0.1s_both] max-w-7xl mr-auto ml-auto pt-24 pr-6 pb-24 pl-6 animate">
+        <div class="text-center max-w-3xl mr-auto ml-auto">
+            <span class="inline-flex items-center rounded-full bg-neutral-900/70 ring-1 ring-white/10 px-3 py-1 text-xs text-neutral-300 border-gradient before:rounded-full font-sans">
+              Sección Carpas
+            </span>
+            <h2 class="sm:text-5xl md:text-6xl leading-[1.1] text-4xl tracking-tight mt-6 font-sans ">
+                Elegí tu precio ideal
+            </h2>
+            <p class=" text-neutral-300 mt-4 font-sans">
+                Todos los packs incluyen servicios base.
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 mt-12">
+
+            <div class="relative rounded-2xl ring-1 ring-white/10 bg-neutral-900/60 sm:p-8 pt-6 pr-6 pb-6 pl-6 border-gradient before:rounded-2xl animate-on-scroll [animation:fadeSlideIn_1s_ease-out_0.2s_both] animate">
+                <div class="absolute inset-x-0 -top-px h-px bg-gradient-to-r from-transparent via-white/10 to-transparent rounded-full pointer-events-none"></div>
+                <h3 class="text-xl font-sans ">Carpa por DIA</h3>
+                <p class="text-sm text-neutral-400 mt-2 font-sans">No Aplica descuento</p>
+                <div class="mt-6">
+                    <span class="text-5xl tracking-tight font-sans ">$40,000</span>
+                    <span class="text-neutral-400  font-sans">/dia</span>
+                </div>
+                <ul class="mt-8 space-y-3">
+                    <li class="flex items-center gap-3 text-sm text-neutral-300 font-sans">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-emerald-400" viewBox="0 0 24 24"
+                             fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="20 6 9 17 4 12"></polyline>
+                        </svg>
+                        Pileta
+                    </li>
+                    <li class="flex items-center gap-3 text-sm text-neutral-300 font-sans">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-emerald-400" viewBox="0 0 24 24"
+                             fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="20 6 9 17 4 12"></polyline>
+                        </svg>
+                        Vestuarios
+                    </li>
+                    <li class="flex items-center gap-3 text-sm text-neutral-300 font-sans">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-emerald-400" viewBox="0 0 24 24"
+                             fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="20 6 9 17 4 12"></polyline>
+                        </svg>
+                        Juegos
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+            <div class="relative rounded-2xl ring-1 ring-violet-400/30 bg-neutral-900/60 sm:p-8 pt-6 pr-6 pb-6 pl-6 border-gradient before:rounded-2xl animate-on-scroll [animation:fadeSlideIn_1s_ease-out_0.25s_both] bg-[radial-gradient(900px_220px_at_50%_50%,rgba(168,85,247,0.22),transparent)] md:scale-105 shadow-2xl shadow-violet-500/20 animate">
+                <div class="absolute inset-x-0 -top-px h-px bg-gradient-to-r from-transparent via-violet-400/50 to-transparent rounded-full pointer-events-none"></div>
+                <div class="absolute -top-3 left-1/2 -translate-x-1/2">
+                    <span class="inline-flex items-center rounded-full bg-violet-500 px-3 py-1 text-xs font-medium text-white font-sans">Mas Popular</span>
+                </div>
+                <h3 class="text-xl font-sans ">Carpa por Temporada</h3>
+                <p class="text-sm text-neutral-400 mt-2 font-sans">Descuento Incluido</p>
+                <div class="mt-6">
+                    <span class="text-5xl tracking-tight font-sans ">$1,600,000</span>
+                    <span class="text-neutral-400  font-sans">/temporada</span>
+                </div>
+                <ul class="mt-8 space-y-3">
+                    <li class="flex items-center gap-3 text-sm text-neutral-300 font-sans">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-emerald-400" viewBox="0 0 24 24"
+                             fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="20 6 9 17 4 12"></polyline>
+                        </svg>
+                        Vestuarios
+                    </li>
+                    <li class="flex items-center gap-3 text-sm text-neutral-300 font-sans">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-emerald-400" viewBox="0 0 24 24"
+                             fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="20 6 9 17 4 12"></polyline>
+                        </svg>
+                        Casilleros
+                    </li>
+                    <li class="flex items-center gap-3 text-sm text-neutral-300 font-sans">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-emerald-400" viewBox="0 0 24 24"
+                             fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="20 6 9 17 4 12"></polyline>
+                        </svg>
+                        Reposera
+                    </li>
+                    <li class="flex items-center gap-3 text-sm text-neutral-300 font-sans">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-emerald-400" viewBox="0 0 24 24"
+                             fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="20 6 9 17 4 12"></polyline>
+                        </svg>
+                        Sombrilla
+                    </li>
+                    <li class="flex items-center gap-3 text-sm text-neutral-300 font-sans">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-emerald-400" viewBox="0 0 24 24"
+                             fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="20 6 9 17 4 12"></polyline>
+                        </svg>
+                        Cochera
+                    </li>
+                    <li class="flex items-center gap-3 text-sm text-neutral-300 font-sans">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-emerald-400" viewBox="0 0 24 24"
+                             fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="20 6 9 17 4 12"></polyline>
+                        </svg>
+                        Duchas
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+            <div class="relative rounded-2xl ring-1 ring-white/10 bg-neutral-900/60 sm:p-8 pt-6 pr-6 pb-6 pl-6 border-gradient before:rounded-2xl animate-on-scroll [animation:fadeSlideIn_1s_ease-out_0.3s_both] animate">
+                <div class="absolute inset-x-0 -top-px h-px bg-gradient-to-r from-transparent via-white/10 to-transparent rounded-full pointer-events-none"></div>
+                <h3 class="text-xl font-sans ">Carpa por Mes</h3>
+                <p class="text-sm text-neutral-400 mt-2 font-sans">Aplica descuento</p>
+                <div class="mt-6">
+                    <span class="text-5xl tracking-tight font-sans ">$400,000</span>
+                    <span class="text-neutral-400  font-sans">/mes</span>
+                </div>
+                <ul class="mt-8 space-y-3">
+                    <li class="flex items-center gap-3 text-sm text-neutral-300 font-sans">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-emerald-400" viewBox="0 0 24 24"
+                             fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="20 6 9 17 4 12"></polyline>
+                        </svg>
+                        Pileta
+                    </li>
+                    <li class="flex items-center gap-3 text-sm text-neutral-300 font-sans">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-emerald-400" viewBox="0 0 24 24"
+                             fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="20 6 9 17 4 12"></polyline>
+                        </svg>
+                        Sombrilla
+                    </li>
+                    <li class="flex items-center gap-3 text-sm text-neutral-300 font-sans">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-emerald-400" viewBox="0 0 24 24"
+                             fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="20 6 9 17 4 12"></polyline>
+                        </svg>
+                        Vestuarios
+                    </li>
+                    <li class="flex items-center gap-3 text-sm text-neutral-300 font-sans">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-emerald-400" viewBox="0 0 24 24"
+                             fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="20 6 9 17 4 12"></polyline>
+                        </svg>
+                        Juegos
+                    </li>
+
+                </ul>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="reserva" class="w-full mr-auto mb-8 ml-auto">
+        <div class="max-w-7xl sm:px-6 lg:px-8 mr-auto ml-auto pr-4 pl-4">
+
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+
+                <div class="lg:col-span-7">
+                    <div class="rounded-3xl bg-neutral-900/60 shadow-lg p-6">
+                        <div class="flex flex-col items-start justify-start">
+                            <div class="w-full flex items-center justify-between">
+                                <div class="">
+                                    <p class="text-[11px] text-neutral-200 font-sans uppercase tracking-wider">
+                                        CARPAS DISPONIBLES
+                                    </p>
+                                    <h3 class="mt-1 text-2xl sm:text-3xl  tracking-tight text-white font-sans">
+                                        Disponibilidad
+                                    </h3>
+                                </div>
+                                <button onclick="listarCarpas()"
+                                        class="h-9 w-9 rounded-lg bg-green-600 hover:bg-green-700 transition-all text-white flex items-center justify-center">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                                         class="bi bi-arrow-clockwise" viewBox="0 0 16 16">
+                                        <path fill-rule="evenodd"
+                                              d="M8 3a5 5 0 1 0 4.546 2.914.5.5 0 0 1 .908-.417A6 6 0 1 1 8 2z"/>
+                                        <path d="M8 4.466V.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384L8.41 4.658A.25.25 0 0 1 8 4.466"/>
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="mt-3 flex flex-col w-full">
+                                <div class="m-0 overflow-x-auto">
+                                    <div class=" w-full inline-block ">
+                                        <div class="overflow-auto" style="max-height: 523px">
+                                            <table class="w-full divide-y divide-neutral-800 ">
+                                                <thead>
+                                                <tr>
+                                                    <th scope="col"
+                                                        class="px-6 py-3 text-start text-xs font-medium text-gray-200 uppercase">
+                                                        ID
+                                                    </th>
+                                                    <th scope="col"
+                                                        class="px-6 py-3 text-start text-xs font-medium text-gray-200 uppercase ">
+                                                        Capacidad
+                                                    </th>
+                                                    <th scope="col"
+                                                        class="px-6 py-3 text-start text-xs font-medium text-gray-200 uppercase ">
+                                                        Vista al mar
+                                                    </th>
+                                                    <th scope="col"
+                                                        class="px-6 py-3 text-end text-xs font-medium text-gray-200 uppercase ">
+                                                        Estado
+                                                    </th>
+                                                </tr>
+                                                </thead>
+                                                <tbody id="tablaCarpasUser"
+                                                       class="w-full divide-y divide-neutral-800 ">
+                                                <tr>
+                                                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-neutral-200 ">
+                                                        #0
+                                                    </td>
+                                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-neutral-400 ">
+                                                        Cargando...
+                                                    </td>
+                                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-neutral-400 ">
+                                                        Cargando...
+                                                    </td>
+                                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-right text-neutral-400 ">
+                                                        Cargando...
+                                                    </td>
+                                                </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-5">
+                    <div class="rounded-3xl bg-neutral-900/60 shadow-lg p-6">
+                        <div class="flex items-center justify-between">
+                            <div class="">
+                                <p class="text-[11px] text-neutral-200 font-sans uppercase tracking-wider">HACER RESERVA</p>
+                                <h3 class="mt-1 text-2xl sm:text-3xl  tracking-tight text-white font-sans">
+                                    Reserva
+                                </h3>
+                            </div>
+                            <div class="h-9 w-9 rounded-lg bg-purple-700 text-white flex items-center justify-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                                     class="bi bi-calendar-week" viewBox="0 0 16 16">
+                                    <path d="M11 6.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5zm-3 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5zm-5 3a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5zm3 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5z"/>
+                                    <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5M1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4z"/>
+                                </svg>
+                            </div>
+                        </div>
+
+                        <form action="#" method="POST" class="mt-6 space-y-4">
+                            <div class="">
+                                <label for="userNombre" class="block text-xs text-neutral-400 font-sans">Nombre y Apellido<span class="text-neutral-500"> *</span></label>
+                                <input id="userNombre" name="name" type="text" required="" minlength="10" maxlength="20" placeholder="Mauricio Macri"
+                                       class="w-full pl-3 pr-3 py-2.5 text-sm rounded-xl ring-1 ring-neutral-800 focus:ring-2 mt-2 text-white focus:ring-neutral-700 outline-none bg-neutral-800 placeholder:text-neutral-700 font-sans">
+                            </div>
+                            <div class="flex flex-row w-full gap-2">
+                                <div class="">
+                                    <label for="userDni" class="block text-xs text-neutral-400 font-sans">Numero de documento<span class="text-neutral-400"> *</span></label>
+                                    <input id="userDni" name="dni" type="text" required="" minlength="8" maxlength="8" placeholder="43 *** ***"
+                                           class="w-full pl-3 pr-3 py-2.5 text-sm rounded-xl ring-1 ring-neutral-800 focus:ring-2 mt-2 text-white focus:ring-neutral-700 outline-none bg-neutral-800 placeholder:text-neutral-700 font-sans">
+                                </div>
+                                <div class="">
+                                    <label for="userTel" class="block text-xs text-neutral-400 font-sans">Numero de telefono<span class="text-neutral-400"> *</span></label>
+                                    <input id="userTel" name="tel" type="text" required="" minlength="10" maxlength="10" placeholder="223 *** ****"
+                                           class="w-full pl-3 pr-3 py-2.5 text-sm rounded-xl ring-1 ring-neutral-800 focus:ring-2 mt-2 text-white focus:ring-neutral-700 outline-none bg-neutral-800 placeholder:text-neutral-700 font-sans">
+                                </div>
+                            </div>
+                            <div class="flex flex-row w-full gap-2">
+                                <div class="">
+                                    <label for="userDesde" class="block text-xs text-neutral-400 font-sans">Estadia DESDE<span class="text-neutral-400"> *</span></label>
+                                    <input id="userDesde" name="desde" type="date" required="" minlength="10" maxlength="10" placeholder="YYYY-MM-DD"
+                                           class="w-full pl-3 pr-3 py-2.5 text-sm rounded-xl ring-1 ring-neutral-800 focus:ring-2 mt-2 text-white focus:ring-neutral-700 outline-none bg-neutral-800 placeholder:text-neutral-700 font-sans">
+                                </div>
+                                <div class="">
+                                    <label for="userHasta" class="block text-xs text-neutral-400 font-sans">Estadia HASTA<span class="text-neutral-400"> *</span></label>
+                                    <input id="userHasta" name="hasta" type="date" required="" minlength="10" maxlength="10" placeholder="YYYY-MM-DD" class="w-full pl-3 pr-3 py-2.5 text-sm rounded-xl ring-1 ring-neutral-800 focus:ring-2 mt-2 text-white focus:ring-neutral-700 outline-none bg-neutral-800 placeholder:text-neutral-700 font-sans">
+                                </div>
+                                <div class="">
+                                    <label for="userHasta" class="block text-xs text-neutral-400 font-sans">Tipo<span class="text-neutral-400"> *</span></label>
+                                    <select id="userTipo"
+                                            class="w-full pl-3 pr-3 py-2.5 text-sm rounded-xl ring-1 ring-neutral-800 focus:ring-2 mt-2 text-white focus:ring-neutral-700 outline-none bg-neutral-800 placeholder:text-neutral-700 font-sans">
+                                        <option value="DIA">Dia</option>
+                                        <option value="MES">Mes</option>
+                                        <option value="TEMPORADA">Temporada</option>
+                                    </select>
+                                </div>
+
+
+                            </div>
+                            <div class="flex flex-row w-full gap-2 align-flex-end bottom-0 ">
+                                <div class="w-full">
+                                    <label for="userCarpaId" class="block text-xs text-neutral-400 font-sans">Numero de carpa<span class="text-neutral-400"> *</span></label>
+                                    <input id="userCarpaId" name="carpa" type="number" required="" placeholder="1" class="w-full pl-3 pr-3 py-2.5 text-sm rounded-xl ring-1 ring-neutral-800 focus:ring-2 mt-2 text-white focus:ring-neutral-700 outline-none bg-neutral-800 placeholder:text-neutral-700 font-sans">
+                                </div>
+
+                            </div>
+
+                            <div class="flex flex-row w-full gap-6">
+
+                                <div class="flex items-center ">
+                                    <input id="userVistaMar" type="checkbox" value="" class="w-4 h-4 text-blue-600 bg-neutral-800 border-gray-700  focus:ring-blue-500 ">
+                                    <label for="userVistaMar" class="ms-2 text-sm font-medium text-neutral-400 ">Vista al mar</label>
+                                </div>
+                                <div class="flex items-center ">
+                                    <input id="userSombrilla" type="checkbox" value="" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300  focus:ring-blue-500 ">
+                                    <label for="userSombrilla" class="ms-2 text-sm font-medium text-neutral-400 ">Con Sombrilla</label>
+                                </div>
+
+                            </div>
+
+
+                            <div class="">
+                                <label for="precioReserva" class="block text-xs text-neutral-500 font-sans">Precio final.</label>
+                                <h3 class="font-bold text-white text-[19px]" id="precioReserva">$40,000</h3>
+                            </div>
+
+                            <button onclick="crearReservaUsuario()" type="submit" class="w-full inline-flex items-center justify-center rounded-xl bg-purple-600  tex-white px-4 py-3 text-sm  hover:bg-purple-700 transition-colors font-sans">Reservar
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                     fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                     stroke-linejoin="round" data-lucide="arrow-right"
+                                     class="lucide lucide-arrow-right h-4 w-4 ml-2">
+                                    <path d="M5 12h14"></path>
+                                    <path d="m12 5 7 7-7 7"></path>
+                                </svg>
+                            </button>
+                            <p class="text-[11px] text-neutral-500 font-sans">Debes recurrir a la administración para abonar, y activar su token de estadia.</p>
+                        </form>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+
+
+    </section>
+
+    <section id="faq" class="max-w-7xl sm:px-6 sm:mt-20 mr-auto mb-24 ml-auto pr-4 pl-4">
+        <div class="relative overflow-hidden ">
+            <div class="relative sm:p-8 pt-6 pr-6 pb-6 pl-6">
+                <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
+
+                    <div class="md:col-span-5">
+                        <h2 class="text-[56px] sm:text-[80px] leading-none  text-white tracking-tighter font-sans">
+                            Preguntas</h2>
+                        <p class="mt-3 text-sm sm: text-white/80 font-sans">
+                            Encontrá respuestas a las consultas más comunes sobre Balneario Torreón, nuestras reservas, servicios y cómo disfrutar al máximo tu estadía frente al mar.
+                        </p>
+                        <a href="#contact"
+                           class="mt-5 inline-flex items-center gap-2 rounded-full px-3 py-1.5 text-sm font-medium tracking-tight text-white/90 bg-white/10 hover:bg-white/15 ring-1 ring-white/15 backdrop-blur">
+                            <span class="font-sans">Contactanos</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                 fill="none"
+                                 stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                 data-lucide="message-circle" class="lucide lucide-message-circle w-4 h-4 stroke-1.5">
+                                <path d="M2.992 16.342a2 2 0 0 1 .094 1.167l-1.065 3.29a1 1 0 0 0 1.236 1.168l3.413-.998a2 2 0 0 1 1.099.092 10 10 0 1 0-4.777-4.719"></path>
+                            </svg>
+                        </a>
+                    </div>
+
+
+                    <div class="md:col-span-7">
+                        <div class="space-y-3">
+
+                            <div class="rounded-2xl ring-1 ring-white/10 bg-white/5 backdrop-blur"
+                                 data-accordion-item=""
+                                 data-open="true">
+                                <button type="button"
+                                        class="w-full flex items-center justify-between gap-4 p-5 text-left"
+                                        aria-expanded="false" data-accordion="faq">
+                                    <span class=" sm:text-lg  tracking-tight text-white font-sans">¿Cómo puedo reservar una carpa o sombrilla?</span>
+                                    <span class="shrink-0">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                     fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                     stroke-linejoin="round" data-lucide="plus" data-icon="plus"
+                                     class="lucide lucide-plus w-5 h-5 stroke-1.5 text-white/70"><path
+                                        d="M5 12h14"></path><path d="M12 5v14"></path></svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                     fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                     stroke-linejoin="round" data-lucide="minus" data-icon="minus"
+                                     class="lucide lucide-minus w-5 h-5 stroke-1.5 text-white/70 hidden"><path
+                                        d="M5 12h14"></path></svg>
+                            </span>
+                                </button>
+                                <div class="px-5 pb-5 text-sm text-white/70 font-sans hidden" data-qa="a">
+                                    Podés realizar tu reserva directamente desde nuestra web o acercarte al sector de atención del balneario. Seleccioná la fecha, el tipo de carpa o sombrilla y la zona que prefieras. Una vez confirmada la reserva, recibirás un comprobante por correo electrónico o WhatsApp.
+                                </div>
+                            </div>
+
+
+                            <div class="rounded-2xl ring-1 ring-white/10 bg-white/5 backdrop-blur"
+                                 data-accordion-item="">
+                                <button type="button"
+                                        class="w-full flex items-center justify-between gap-4 p-5 text-left"
+                                        aria-expanded="false" data-accordion="faq">
+                                    <span class=" sm:text-lg  tracking-tight text-white font-sans">¿Qué pasa si cambia el clima o necesito reprogramar?</span>
+                                    <span class="shrink-0">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                     fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                     stroke-linejoin="round" data-lucide="plus" data-icon="plus"
+                                     class="lucide lucide-plus w-5 h-5 stroke-1.5 text-white/70"><path
+                                        d="M5 12h14"></path><path d="M12 5v14"></path></svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                     fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                     stroke-linejoin="round" data-lucide="minus" data-icon="minus"
+                                     class="lucide lucide-minus w-5 h-5 stroke-1.5 text-white/70 hidden"><path
+                                        d="M5 12h14"></path></svg>
+                            </span>
+                                </button>
+                                <div class="px-5 pb-5 text-sm text-white/70 font-sans hidden" data-qa="a">
+                                    En caso de mal clima o imprevistos, podés reprogramar tu reserva comunicándote con nuestro equipo. Si el día se vuelve inadecuado para permanecer en la playa, frecemos opciones de cambio de fecha o crédito para otra jornada. Queremos que disfrutes sin preocupaciones.
+                                </div>
+                            </div>
+
+
+                            <div class="rounded-2xl ring-1 ring-white/10 bg-white/5 backdrop-blur"
+                                 data-accordion-item="">
+                                <button type="button"
+                                        class="w-full flex items-center justify-between gap-4 p-5 text-left"
+                                        aria-expanded="false" data-accordion="faq">
+                                    <span class=" sm:text-lg  tracking-tight text-white font-sans">¿Puedo usar los servicios si no tengo internet?</span>
+                                    <span class="shrink-0">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                     fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                     stroke-linejoin="round" data-lucide="plus" data-icon="plus"
+                                     class="lucide lucide-plus w-5 h-5 stroke-1.5 text-white/70"><path
+                                        d="M5 12h14"></path><path d="M12 5v14"></path></svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                     fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                     stroke-linejoin="round" data-lucide="minus" data-icon="minus"
+                                     class="lucide lucide-minus w-5 h-5 stroke-1.5 text-white/70 hidden"><path
+                                        d="M5 12h14"></path></svg>
+                            </span>
+                                </button>
+                                <div class="px-5 pb-5 text-sm text-white/70 font-sans hidden" data-qa="a">
+                                    Sí, podés acceder a tu reserva y mostrar tu comprobante sin conexión. Además, contamos con Wi-Fi libre en sectores del balneario. Los servicios esenciales, como acceso a carpas o restaurante, se gestionan con tu nombre o código de reserva.
+                                </div>
+                            </div>
+
+
+                            <div class="rounded-2xl ring-1 ring-white/10 bg-white/5 backdrop-blur"
+                                 data-accordion-item="">
+                                <button type="button"
+                                        class="w-full flex items-center justify-between gap-4 p-5 text-left"
+                                        aria-expanded="false" data-accordion="faq">
+                                    <span class=" sm:text-lg  tracking-tight text-white font-sans">¿Cómo funcionan los precios y promociones?</span>
+                                    <span class="shrink-0">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                     fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                     stroke-linejoin="round" data-lucide="plus" data-icon="plus"
+                                     class="lucide lucide-plus w-5 h-5 stroke-1.5 text-white/70"><path
+                                        d="M5 12h14"></path><path d="M12 5v14"></path></svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                     fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                     stroke-linejoin="round" data-lucide="minus" data-icon="minus"
+                                     class="lucide lucide-minus w-5 h-5 stroke-1.5 text-white/70 hidden"><path
+                                        d="M5 12h14"></path></svg>
+                            </span>
+                                </button>
+                                <div class="px-5 pb-5 text-sm text-white/70 font-sans hidden" data-qa="a">
+                                    Nuestros precios varían según la temporada, la ubicación de la carpa y la duración de la estadía. Podés consultar promociones vigentes desde nuestra web o redes sociales. También ofrecemos descuentos por reservas anticipadas o estadías prolongadas.
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+                document.querySelectorAll('#faq [data-accordion-item]').forEach(item => {
+                    const open = item.hasAttribute('data-open');
+                    const btn = item.querySelector('[data-accordion="faq"]');
+                    const a = item.querySelector('[data-qa="a"]');
+                    const plus = item.querySelector('[data-icon="plus"]');
+                    const minus = item.querySelector('[data-icon="minus"]');
+                    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+                    a.classList.toggle('hidden', !open);
+                    plus.classList.toggle('hidden', open);
+                    minus.classList.toggle('hidden', !open);
+                });
+
+
+                document.querySelectorAll('#faq [data-accordion="faq"]').forEach(btn => {
+                    btn.addEventListener('click', () => {
+                        const item = btn.closest('[data-accordion-item]');
+                        const content = item.querySelector('[data-qa="a"]');
+                        const plus = item.querySelector('[data-icon="plus"]');
+                        const minus = item.querySelector('[data-icon="minus"]');
+                        const expanded = btn.getAttribute('aria-expanded') === 'true';
+                        btn.setAttribute('aria-expanded', String(!expanded));
+                        content.classList.toggle('hidden');
+                        plus.classList.toggle('hidden');
+                        minus.classList.toggle('hidden');
+                    });
+                });
+
+                if (window.lucide && typeof lucide.createIcons === 'function') {
+                    lucide.createIcons();
+                }
+            });
+        </script>
+    </section>
+
+</div>
+
+</body>
+
+
+<!-- scripts balneario torreon base -->
+<script>
+    let isAdmin = false;
+    let currentUser = "usuario";
+
+    function login() {
+        const user = document.getElementById("username").value.trim();
+        const pass = document.getElementById("password").value.trim();
+        if (user === "admin1" && pass === "123") {
+            isAdmin = true;
+            currentUser = "admin1";
+            document.getElementById("loginModal").classList.add("hidden");
+        } else {
+            isAdmin = false;
+            currentUser = user || "usuario";
+        }
+        updateView();
+        closeLoginModal();
+        showMessage(`Bienvenido ${currentUser}${isAdmin ? " (Administrador)" : ""}`, "success");
+    }
+
+    function logout() {
+        isAdmin = false;
+        currentUser = "usuario";
+        updateView();
+        showMessage("Sesión cerrada correctamente.", "info");
+    }
+
+    function openLoginModal() {
+        document.getElementById("loginModal").classList.remove("hidden");
+    }
+
+    function closeLoginModal() {
+        document.getElementById("loginModal").classList.add("hidden");
+    }
+
+    function updateView() {
+
+        const navUser = document.getElementById("navUser");
+        const navAdmin = document.getElementById("navAdmin");
+
+        if (isAdmin) {
+            navUser.classList.add("hidden");
+            navAdmin.classList.remove("hidden");
+        } else {
+            navAdmin.classList.add("hidden");
+            navUser.classList.remove("hidden");
+        }
+
+        document.querySelector(".admin").classList.toggle("hidden", !isAdmin);
+        document.querySelector(".user").classList.toggle("hidden", isAdmin);
+        document.getElementById("loginSection").innerHTML = isAdmin
+            ? `<span>${currentUser}</span> <button onclick="logout()" class="bg-red-500 hover:bg-red-600 ml-3 px-3 py-1 rounded-full">Cerrar sesión</button>`
+            : ` <button id="loginBtn" onclick="openLoginModal()" class="text-sm font-medium text-white/80 hover:text-white transition font-sans">Panel STAFF</button>`;
+        document.getElementById("loginInfo").innerText = `Sesión actual: ${currentUser} ${isAdmin ? "(Admin)" : "(Usuario)"}`;
+    }
+
+    function showAdminSection(section) {
+        const sections = ["carpas", "clientes", "reservas"];
+
+        sections.forEach((s) => {
+            document
+                .getElementById(`sec${s.charAt(0).toUpperCase() + s.slice(1)}`)
+                .classList.add("hidden");
+
+            const navBtn = document.getElementById(
+                `nav${s.charAt(0).toUpperCase() + s.slice(1)}`
+            );
+            navBtn.classList.remove(
+                "bg-neutral-800",
+                "text-neutral-100",
+                "ring-1",
+                "ring-neutral-700"
+            );
+            navBtn.classList.add("text-neutral-300");
+        });
+
+        document
+            .getElementById(`sec${section.charAt(0).toUpperCase() + section.slice(1)}`)
+            .classList.remove("hidden");
+
+
+        const activeBtn = document.getElementById(
+            `nav${section.charAt(0).toUpperCase() + section.slice(1)}`
+        );
+        activeBtn.classList.add(
+            "bg-neutral-800",
+            "text-neutral-100",
+            "ring-1",
+            "ring-neutral-700"
+        );
+        activeBtn.classList.remove("text-neutral-300");
+    }
+
+    function crearCarpa() {
+        const capacidad = parseInt(document.getElementById("capacidad").value);
+        const vistaMar = document.getElementById("vistaMar").checked;
+        const sombrilla = document.getElementById("sombrilla").checked;
+        const res = JSON.parse(window.javaApp.crearCarpa(capacidad, vistaMar, sombrilla));
+        showMessage(res.ok ? " Carpa creada exitosamente." : " " + res.error, res.ok ? "success" : "error");
+        listarCarpas();
+    }
+
+    function eliminarCarpa() {
+        const id = document.getElementById("deleteCarpaId").value;
+        const ok = window.javaApp.eliminarCarpa(parseInt(id));
+        showMessage(
+            ok ? "Carpa eliminada correctamente." : " No se encontró la carpa.",
+            ok ? "success" : "error"
+        );
+        if (ok) listarCarpas();
+    }
+
+    function listarCarpas() {
+        const data = JSON.parse(window.javaApp.listarCarpasJson());
+        const tbAdmin = document.getElementById("tablaCarpas");
+        const tbUser = document.getElementById("tablaCarpasUser");
+        tbAdmin.innerHTML = tbUser.innerHTML = "";
+        data.forEach(c => {
+            const row = `<tr class="border-t-1 border-neutral-800"><td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-neutral-200 ">#${c.id}</td><td class="px-6 py-4 whitespace-nowrap text-sm text-neutral-400 ">${c.capacidad} personas</td><td class="px-6 py-4 whitespace-nowrap text-sm text-neutral-400 ">${c.vistaMar ? "Tiene." : "No tiene."}</td><td class="px-6 py-4 whitespace-nowrap text-sm text-neutral-400"><div class="flex flex-row justify-end items-center"><div class="w-fit">${c.disponible ? "Disponible" : "Ocupada"}</div><div class="w-fit ml-2"><div class="h-[15px] w-[15px] rounded-full ${c.disponible ? 'bg-green-500' : 'bg-red-500'}"></div></div></div></td></tr>`;
+            tbAdmin.innerHTML += row;
+            tbUser.innerHTML += row;
+
+        });
+    }
+
+    function crearCliente() {
+        const nombre = document.getElementById("nombre").value;
+        const dni = document.getElementById("dni").value;
+        const tel = document.getElementById("telefono").value;
+        const res = JSON.parse(window.javaApp.crearCliente(nombre, dni, tel));
+        showMessage(res.ok ? "Cliente agregado correctamente." : " " + res.error, res.ok ? "success" : "error");
+        listarClientes();
+    }
+
+    function eliminarCliente() {
+        const id = document.getElementById("deleteClienteId").value;
+        const ok = window.javaApp.eliminarCliente(parseInt(id));
+        showMessage(ok ? "Cliente eliminado correctamente." : "No se encontró el cliente.", ok ? "success" : "error");
+    }
+
+    function listarClientes() {
+        const data = JSON.parse(window.javaApp.listarClientesJson());
+        const tbody = document.getElementById("tablaClientes");
+        tbody.innerHTML = "";
+        data.forEach(c => tbody.innerHTML += `<tr><td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-neutral-200 ">#${c.id}</td><td class="px-6 py-4 whitespace-nowrap text-sm text-neutral-400 ">${c.nombre}</td><td class="px-6 py-4 whitespace-nowrap text-sm text-neutral-400 ">${c.dni}</td><td class="px-6 py-4 whitespace-nowrap text-sm text-right text-neutral-400 ">${c.telefono}</td></tr>`);
+    }
+
+    function crearReserva() {
+        const idCliente = parseInt(document.getElementById("resCliente").value);
+        const idCarpa = parseInt(document.getElementById("resCarpa").value);
+        const desde = document.getElementById("resDesde").value;
+        const hasta = document.getElementById("resHasta").value;
+        const tipo = document.getElementById("resTipo").value;
+        const res = JSON.parse(window.javaApp.crearReserva(idCliente, idCarpa, desde, hasta, tipo));
+        showMessage(res.ok ? "Reserva creada exitosamente." : " " + res.error, res.ok ? "success" : "error");
+        listarReservas();
+        listarCarpas();
+    }
+
+    function verificarFormulario() {
+        const nombre = document.getElementById("userNombre").value.trim();
+        const dni = document.getElementById("userDni").value.trim();
+        const tel = document.getElementById("userTel").value.trim();
+        const desde = document.getElementById("userDesde").value.trim();
+        const hasta = document.getElementById("userHasta").value.trim();
+        const tipo = document.getElementById("userTipo").value;
+        const carpaId = document.getElementById("userCarpaId").value.trim();
+
+        if (!nombre || nombre.length < 10 || nombre.length > 20) {
+            showMessage("El nombre debe tener entre 10 y 20 caracteres.", "error");
+            return false;
+        }
+        if (!dni || dni.length !== 8 || isNaN(dni)) {
+            showMessage("El DNI debe tener 8 dígitos numéricos.", "error");
+            return false;
+        }
+        if (!tel || tel.length !== 10 || isNaN(tel)) {
+            showMessage("El teléfono debe tener 10 dígitos numéricos.", "error");
+            return false;
+        }
+        if (!desde || !hasta) {
+            showMessage("Debe seleccionar fechas válidas.", "error");
+            return false;
+        }
+        if (!tipo) {
+            showMessage("Debe seleccionar un tipo de estadía.", "error");
+            return false;
+        }
+        if (!carpaId || isNaN(carpaId)) {
+            showMessage("Debe ingresar un número de carpa válido.", "error");
+            return false;
+        }
+
+        return verificarCarpa();
+    }
+
+    function verificarCarpa() {
+        const idCarpa = parseInt(document.getElementById("userCarpaId").value);
+        const carpas = JSON.parse(window.javaApp.listarCarpasJson());
+        const carpa = carpas.find(c => c.id === idCarpa);
+        const boton = document.querySelector("button[type='submit']");
+
+        if (!carpa) {
+            showMessage("Carpa no encontrada.", "error");
+            boton.disabled = true;
+            return false;
+        }
+
+        if (!carpa.disponible) {
+            showMessage("La carpa está ocupada.", "error");
+            boton.disabled = true;
+            return false;
+        }
+
+        showMessage("Carpa disponible.", "success");
+        boton.disabled = false;
+        return true;
+    }
+
+    function crearReservaUsuario() {
+        if (!verificarFormulario()) return false;
+
+        const nombre = document.getElementById("userNombre").value.trim();
+        const dni = document.getElementById("userDni").value.trim();
+        const tel = document.getElementById("userTel").value.trim();
+        const desde = document.getElementById("userDesde").value.trim();
+        const hasta = document.getElementById("userHasta").value.trim();
+        const tipo = document.getElementById("userTipo").value;
+        const carpaId = parseInt(document.getElementById("userCarpaId").value);
+
+        const clienteResponse = JSON.parse(window.javaApp.crearCliente(nombre, dni, tel));
+        showMessage(
+            clienteResponse.ok ? "Cliente creado correctamente." : clienteResponse.error,
+            clienteResponse.ok ? "success" : "error"
+        );
+        if (!clienteResponse.ok) return false;
+
+        const clienteId = clienteResponse.id;
+        const reservaResponse = JSON.parse(window.javaApp.crearReserva(clienteId, carpaId, desde, hasta, tipo));
+        showMessage(
+            reservaResponse.ok ? "Reserva creada exitosamente." : reservaResponse.error,
+            reservaResponse.ok ? "success" : "error"
+        );
+
+        if (reservaResponse.ok) {
+            listarReservas();
+        }
+        return reservaResponse.ok;
+    }
+
+    function eliminarReserva() {
+        const id = document.getElementById("deleteReservaId").value;
+        const ok = window.javaApp.eliminarReserva(parseInt(id));
+        showMessage(ok ? "Reserva eliminada correctamente." : " No se encontró la reserva.", ok ? "success" : "error");
+    }
+
+    function listarReservas() {
+        const data = JSON.parse(window.javaApp.listarReservasJson());
+        const tbody = document.getElementById("tablaReservas");
+        tbody.innerHTML = "";
+        data.forEach(r => tbody.innerHTML += `<td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-neutral-200">#${r.id}</td><td class="px-6 py-4 whitespace-nowrap text-sm text-neutral-400">#${r.clienteId}</td><td class="px-6 py-4 whitespace-nowrap text-sm text-neutral-400">#${r.carpaId}</td><td class="px-6 py-4 whitespace-nowrap text-sm  text-neutral-400">${r.fechaDesde}</td><td class="px-6 py-4 whitespace-nowrap text-sm text-neutral-400 ">${r.fechaHasta}</td><td class="px-6 py-4 whitespace-nowrap text-sm text-right text-neutral-400 "><div class="flex flex-row justify-end items-center"><div class="w-fit">${r.tipo}</div><div class="w-fit ml-2"><div class="h-[15px] w-[15px] rounded-full ${r.activa ? 'bg-green-500' : 'bg-red-600'}"></div></div></div></td></tr>`);
+    }
+
+    function actualizarPrecio() {
+        const tipo = document.getElementById("userTipo").value;
+        const sombrilla = document.getElementById("userSombrilla").checked;
+        const vistaMar = document.getElementById("userVistaMar").checked;
+
+        const precio = window.javaApp.calcularPrecioReserva(tipo, sombrilla, vistaMar);
+        document.getElementById("precioReserva").textContent = `$${precio.toLocaleString("Pesos")}`;
+    }
+
+    function showMainSection(section) {
+        const sections = ["carpas", "clientes", "reservas"];
+        sections.forEach(s => {
+            document.getElementById(`sec${s.charAt(0).toUpperCase() + s.slice(1)}`).classList.add("hidden");
+            document.getElementById(`nav${s.charAt(0).toUpperCase() + s.slice(1)}`).classList.remove("bg-neutral-800", "text-neutral-100", "ring-1", "ring-neutral-700");
+            document.getElementById(`nav${s.charAt(0).toUpperCase() + s.slice(1)}`).classList.add("text-neutral-300");
+        });
+        document.getElementById(`sec${section.charAt(0).toUpperCase() + section.slice(1)}`).classList.remove("hidden");
+        const btn = document.getElementById(`nav${section.charAt(0).toUpperCase() + section.slice(1)}`);
+        btn.classList.add("bg-neutral-800", "text-neutral-100", "ring-1", "ring-neutral-700");
+    }
+
+    function showSubSection(main, sub) {
+        const prefix = main;
+        const all = document.querySelectorAll(`[id^="${prefix}-"]`);
+        all.forEach(div => div.classList.add("hidden"));
+
+        const subnavs = document.querySelectorAll(`#sec${main.charAt(0).toUpperCase() + main.slice(1)} .subnav`);
+        subnavs.forEach(btn => {
+            btn.classList.remove("bg-neutral-800", "text-neutral-100", "ring-1", "ring-neutral-700");
+            btn.classList.add("text-neutral-300");
+        });
+
+        document.getElementById(`${prefix}-${sub}`).classList.remove("hidden");
+        document.getElementById(`nav${sub.charAt(0).toUpperCase() + sub.slice(1)}`).classList.add("bg-neutral-800", "text-neutral-100", "ring-1", "ring-neutral-700");
+    }
+
+    function showMessage(text, type = "info") {
+        const colors = {success: "green", error: "red", info: "blue"};
+        const colorsborder = {success: "green", error: "red", info: "blue"};
+        const div = document.createElement("div");
+        div.className = `fixed bottom-5 right-5 bg-${colors[type]}-600 z-60 text-white px-4 py-2 rounded-full border-2 border-${colorsborder[type]}-700 shadow`;
+        div.textContent = text;
+        document.body.appendChild(div);
+        setTimeout(() => div.remove(), 2500);
+    }
+
+
+
+    document.getElementById("userTipo").addEventListener("change", actualizarPrecio);
+    document.getElementById("userSombrilla").addEventListener("change", actualizarPrecio);
+    document.getElementById("userVistaMar").addEventListener("change", actualizarPrecio);
+
+    window.addEventListener("DOMContentLoaded", () => {
+        cargarCarpasDisponibles();
+        actualizarPrecio();
+    });
+
+    window.onload = () => {
+        listarCarpas();
+        listarClientes();
+        listarReservas();
+        updateView();
+    };
+
+
+    document.addEventListener('scroll', () => {
+        const scrollTop = window.scrollY;
+        const docHeight = document.body.scrollHeight - window.innerHeight;
+        const thumbHeight = 80;
+        const trackHeight = window.innerHeight - thumbHeight;
+        const thumbPos = (scrollTop / docHeight) * trackHeight;
+        document.querySelector('.custom-scroll-thumb').style.top = thumbPos + 'px';
+    });
+
+
+</script>
+
+</html>
