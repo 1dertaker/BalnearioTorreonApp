@@ -1,49 +1,19 @@
 package repo;
 
-import classes.*;
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.google.gson.reflect.TypeToken;
+import classes.;
 
-import java.io.*;
-import java.lang.reflect.Type;
-import java.nio.file.Files;
-import java.nio.file.Path;
+import com.google.gson.reflect.TypeToken;
+import java.io.;
 import java.util.*;
 import java.util.stream.Collectors;
 
-public class RepositorioReservas {
-    private final Gson gson = new GsonBuilder().setPrettyPrinting().create();
-    private final Path filePath = Path.of(System.getProperty("user.dir"), "reservas.json");
 
+public class RepositorioReservas extends RepositorioGenerico<Reserva> implements IRepositorio<Reserva> {
     public RepositorioReservas() {
-        try {
-            Files.createDirectories(filePath.getParent());
-            if (!Files.exists(filePath)) Files.writeString(filePath, "[]");
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        super("reservas.json", new TypeToken<List<Reserva>>() {}.getType());
     }
 
-    private List<Reserva> readAll() {
-        try (Reader reader = Files.newBufferedReader(filePath)) {
-            Type listType = new TypeToken<List<Reserva>>() {}.getType();
-            List<Reserva> reservas = gson.fromJson(reader, listType);
-            return reservas != null ? reservas : new ArrayList<>();
-        } catch (IOException e) {
-            e.printStackTrace();
-            return new ArrayList<>();
-        }
-    }
-
-    private void saveAll(List<Reserva> reservas) {
-        try (Writer writer = Files.newBufferedWriter(filePath)) {
-            gson.toJson(reservas, writer);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-
+    @Override
     public Reserva agregar(Reserva r) {
         List<Reserva> reservas = readAll();
         int nextId = reservas.stream().mapToInt(Reserva::getId).max().orElse(0) + 1;
@@ -53,14 +23,17 @@ public class RepositorioReservas {
         return r;
     }
 
+    @Override
     public List<Reserva> listar() {
         return readAll();
     }
 
+    @Override
     public Optional<Reserva> buscarPorId(int id) {
         return readAll().stream().filter(r -> r.getId() == id).findFirst();
     }
 
+    @Override
     public boolean eliminar(int id) {
         List<Reserva> reservas = readAll();
         boolean removed = reservas.removeIf(r -> r.getId() == id);
