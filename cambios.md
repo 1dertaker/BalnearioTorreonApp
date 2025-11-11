@@ -17,3 +17,9 @@ Creación de clases principales
 
 Creación de código JSON y repositorios.
 - Ciro Baez: Se crearon los archivos JSONUtiles y los repositorios Carpa, Cliente y Reserva.
+
+# [1.0.2] – Octubre 29, 2025
+
+Creación de HTML y repositorios con Excepciones .
+- Pili: Cree el hmtl, con el JS integrado para conectar directamente con el JavaBridge y luego con java. 
+ademas, agregue Exceptions para el JavaBridge.
