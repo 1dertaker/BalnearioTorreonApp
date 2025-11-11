@@ -23,3 +23,9 @@ Creación de código JSON y repositorios.
 Creación de HTML y repositorios con Excepciones .
 - Pili: Cree el hmtl, con el JS integrado para conectar directamente con el JavaBridge y luego con java. 
 ademas, agregue Exceptions para el JavaBridge.
+
+# [1.0.4] – Noviembre 10, 2025
+
+Creación de repositorios e interfaz principal.
+- Lucas: Cree los repositorios, que extienden de la clase generica llamada Repositorio Generico, y creo la interfaz con los metodos
+principales de cada repositorio.
