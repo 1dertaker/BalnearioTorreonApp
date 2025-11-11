@@ -1,0 +1,182 @@
+[
+  {
+    "id": 1,
+    "clienteId": 1,
+    "carpaId": 1,
+    "fechaDesde": "2025-11-01",
+    "fechaHasta": "2025-11-01",
+    "tipo": "DIA",
+    "activa": true
+  },
+  {
+    "id": 2,
+    "clienteId": 2,
+    "carpaId": 2,
+    "fechaDesde": "2025-12-02",
+    "fechaHasta": "2025-12-09",
+    "tipo": "SEMANA",
+    "activa": true
+  },
+  {
+    "id": 3,
+    "clienteId": 3,
+    "carpaId": 3,
+    "fechaDesde": "2025-12-15",
+    "fechaHasta": "2025-12-31",
+    "tipo": "MES",
+    "activa": false
+  },
+  {
+    "id": 4,
+    "clienteId": 4,
+    "carpaId": 4,
+    "fechaDesde": "2025-11-20",
+    "fechaHasta": "2025-11-27",
+    "tipo": "SEMANA",
+    "activa": true
+  },
+  {
+    "id": 5,
+    "clienteId": 5,
+    "carpaId": 5,
+    "fechaDesde": "2025-11-01",
+    "fechaHasta": "2026-03-31",
+    "tipo": "TEMPORADA",
+    "activa": true
+  },
+  {
+    "id": 6,
+    "clienteId": 6,
+    "carpaId": 6,
+    "fechaDesde": "2025-12-10",
+    "fechaHasta": "2025-12-17",
+    "tipo": "SEMANA",
+    "activa": false
+  },
+  {
+    "id": 7,
+    "clienteId": 7,
+    "carpaId": 7,
+    "fechaDesde": "2025-12-24",
+    "fechaHasta": "2025-12-25",
+    "tipo": "DIA",
+    "activa": true
+  },
+  {
+    "id": 8,
+    "clienteId": 8,
+    "carpaId": 8,
+    "fechaDesde": "2025-12-01",
+    "fechaHasta": "2026-01-01",
+    "tipo": "MES",
+    "activa": true
+  },
+  {
+    "id": 9,
+    "clienteId": 9,
+    "carpaId": 9,
+    "fechaDesde": "2025-12-01",
+    "fechaHasta": "2026-04-30",
+    "tipo": "TEMPORADA",
+    "activa": true
+  },
+  {
+    "id": 10,
+    "clienteId": 10,
+    "carpaId": 10,
+    "fechaDesde": "2025-12-25",
+    "fechaHasta": "2025-12-25",
+    "tipo": "DIA",
+    "activa": false
+  },
+  {
+    "id": 11,
+    "clienteId": 11,
+    "carpaId": 11,
+    "fechaDesde": "2025-12-01",
+    "fechaHasta": "2026-03-01",
+    "tipo": "TEMPORADA",
+    "activa": true
+  },
+  {
+    "id": 12,
+    "clienteId": 12,
+    "carpaId": 12,
+    "fechaDesde": "2025-01-01",
+    "fechaHasta": "2025-01-02",
+    "tipo": "DIA",
+    "activa": true
+  },
+  {
+    "id": 13,
+    "clienteId": 13,
+    "carpaId": 13,
+    "fechaDesde": "2025-01-01",
+    "fechaHasta": "2025-01-08",
+    "tipo": "SEMANA",
+    "activa": false
+  },
+  {
+    "id": 14,
+    "clienteId": 14,
+    "carpaId": 14,
+    "fechaDesde": "2025-01-01",
+    "fechaHasta": "2025-02-01",
+    "tipo": "MES",
+    "activa": true
+  },
+  {
+    "id": 15,
+    "clienteId": 15,
+    "carpaId": 15,
+    "fechaDesde": "2025-01-10",
+    "fechaHasta": "2025-01-11",
+    "tipo": "DIA",
+    "activa": true
+  },
+  {
+    "id": 16,
+    "clienteId": 16,
+    "carpaId": 16,
+    "fechaDesde": "2025-01-15",
+    "fechaHasta": "2025-01-22",
+    "tipo": "SEMANA",
+    "activa": false
+  },
+  {
+    "id": 17,
+    "clienteId": 17,
+    "carpaId": 17,
+    "fechaDesde": "2025-02-01",
+    "fechaHasta": "2025-02-28",
+    "tipo": "MES",
+    "activa": true
+  },
+  {
+    "id": 18,
+    "clienteId": 18,
+    "carpaId": 18,
+    "fechaDesde": "2025-02-10",
+    "fechaHasta": "2025-02-11",
+    "tipo": "DIA",
+    "activa": true
+  },
+  {
+    "id": 19,
+    "clienteId": 19,
+    "carpaId": 19,
+    "fechaDesde": "2025-03-01",
+    "fechaHasta": "2025-03-31",
+    "tipo": "MES",
+    "activa": false
+  },
+  {
+    "id": 20,
+    "clienteId": 20,
+    "carpaId": 20,
+    "fechaDesde": "2025-03-15",
+    "fechaHasta": "2025-03-22",
+    "tipo": "SEMANA",
+    "activa": true
+  }
+]
