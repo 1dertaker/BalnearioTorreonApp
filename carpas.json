@@ -1,0 +1,93 @@
+[
+  {
+    "id": 1,
+    "capacidad": 6,
+    "disponible": false,
+    "vistaMar": true,
+    "sombrilla": true
+  },
+  {
+    "id": 2,
+    "capacidad": 6,
+    "disponible": false,
+    "vistaMar": false,
+    "sombrilla": true
+  },
+  {
+    "id": 3,
+    "capacidad": 6,
+    "disponible": true,
+    "vistaMar": true,
+    "sombrilla": false
+  },
+  {
+    "id": 4,
+    "capacidad": 6,
+    "disponible": false,
+    "vistaMar": false,
+    "sombrilla": true
+  },
+  {
+    "id": 5,
+    "capacidad": 6,
+    "disponible": false,
+    "vistaMar": true,
+    "sombrilla": false
+  },
+  {
+    "id": 6,
+    "capacidad": 6,
+    "disponible": false,
+    "vistaMar": true,
+    "sombrilla": true
+  },
+  {
+    "id": 7,
+    "capacidad": 6,
+    "disponible": true,
+    "vistaMar": true,
+    "sombrilla": true
+  },
+  {
+    "id": 8,
+    "capacidad": 6,
+    "disponible": true,
+    "vistaMar": false,
+    "sombrilla": false
+  },
+  {
+    "id": 9,
+    "capacidad": 6,
+    "disponible": true,
+    "vistaMar": true,
+    "sombrilla": true
+  },
+  {
+    "id": 10,
+    "capacidad": 6,
+    "disponible": false,
+    "vistaMar": false,
+    "sombrilla": true
+  },
+  {
+    "id": 11,
+    "capacidad": 6,
+    "disponible": true,
+    "vistaMar": true,
+    "sombrilla": false
+  },
+  {
+    "id": 12,
+    "capacidad": 6,
+    "disponible": true,
+    "vistaMar": true,
+    "sombrilla": false
+  },
+  {
+    "id": 13,
+    "capacidad": 9,
+    "disponible": true,
+    "vistaMar": true,
+    "sombrilla": false
+  }
+]
