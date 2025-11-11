@@ -1,0 +1,122 @@
+[
+  {
+    "id": 1,
+    "nombre": "Alejandro Gómez",
+    "dni": "30123456",
+    "telefono": "2235123456"
+  },
+  {
+    "id": 2,
+    "nombre": "María Fernández",
+    "dni": "31234567",
+    "telefono": "2235234789"
+  },
+  {
+    "id": 3,
+    "nombre": "Javier Rodríguez",
+    "dni": "32234567",
+    "telefono": "2235987421"
+  },
+  {
+    "id": 4,
+    "nombre": "Carolina López",
+    "dni": "33345678",
+    "telefono": "2236012345"
+  },
+  {
+    "id": 5,
+    "nombre": "Santiago Martínez",
+    "dni": "34456789",
+    "telefono": "2234789654"
+  },
+  {
+    "id": 6,
+    "nombre": "Valeria Torres",
+    "dni": "35567890",
+    "telefono": "2235236547"
+  },
+  {
+    "id": 7,
+    "nombre": "Federico Castro",
+    "dni": "36678901",
+    "telefono": "2234876512"
+  },
+  {
+    "id": 8,
+    "nombre": "Lucía Herrera",
+    "dni": "37789012",
+    "telefono": "2235012398"
+  },
+  {
+    "id": 9,
+    "nombre": "Gonzalo Pérez",
+    "dni": "38890123",
+    "telefono": "2234781209"
+  },
+  {
+    "id": 10,
+    "nombre": "Natalia Romero",
+    "dni": "39901234",
+    "telefono": "2235129876"
+  },
+  {
+    "id": 11,
+    "nombre": "Matías Silva",
+    "dni": "40112345",
+    "telefono": "2234578789"
+  },
+  {
+    "id": 12,
+    "nombre": "Florencia Díaz",
+    "dni": "41223456",
+    "telefono": "2234567890"
+  },
+  {
+    "id": 13,
+    "nombre": "Hernán Cabrera",
+    "dni": "42334567",
+    "telefono": "2235460989"
+  },
+  {
+    "id": 14,
+    "nombre": "Paula Sánchez",
+    "dni": "43445678",
+    "telefono": "2235456567"
+  },
+  {
+    "id": 15,
+    "nombre": "Rodrigo Molina",
+    "dni": "44556789",
+    "telefono": "2235465677"
+  },
+  {
+    "id": 16,
+    "nombre": "Julieta Navarro",
+    "dni": "45667890",
+    "telefono": "2235123456"
+  },
+  {
+    "id": 17,
+    "nombre": "Martín Aguirre",
+    "dni": "46778901",
+    "telefono": "2235234789"
+  },
+  {
+    "id": 18,
+    "nombre": "Camila Ortiz",
+    "dni": "47889012",
+    "telefono": "2235987421"
+  },
+  {
+    "id": 19,
+    "nombre": "Esteban Rivas",
+    "dni": "48990123",
+    "telefono": "2236012345"
+  },
+  {
+    "id": 20,
+    "nombre": "Andrea Domínguez",
+    "dni": "49001234",
+    "telefono": "2234789654"
+  }
+]
