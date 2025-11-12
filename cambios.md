@@ -10,7 +10,7 @@ y respecto al proyecto de Balneario no hay nada cargado aun. solo el archivo de 
 # [1.0.1] – Octubre 26, 2025
 
 Creación de clases principales
-- Moron Gabriel: Se crearon las clases Carpa, CarpaPlaya, Reserva y Clientes, dentro de esta agregue el metodo toString() y sus validaciones entre clases.
+- Moron Gabriel: Se crearon las clases Carpa, Reserva y Clientes, dentro de esta agregue el metodo toString() y sus validaciones entre clases.
 - Luego deje algunos codigos preparados para mi siguiente actualizacion.
 
 # [1.0.2] – Octubre 29, 2025
