@@ -1,4 +1,4 @@
-![](https://views.igorkowalczyk.dev/api/badge/1dertaker?style=classic&display=true)
+![](https://views.igorkowalczyk.dev/api/badge/igorkowalczyk?style=flat&display=true&format=short)
 
 Diagrama UML [Link de imagen](https://ibb.co/twrMv3wT).
 
