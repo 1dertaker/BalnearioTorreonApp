@@ -1,3 +1,4 @@
+| `classic` | ![](https://views.igorkowalczyk.dev/api/badge/example?style=classic&display=true) | `style=classic` |
 
 Diagrama UML [Link de imagen](https://ibb.co/twrMv3wT).
 
